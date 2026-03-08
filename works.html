@@ -18,47 +18,56 @@ color:#111;
 padding:40px;
 }
 
-h1{
-font-size:60px;
-margin-bottom:40px;
-}
-
-.back{
-text-decoration:none;
-color:black;
-font-size:20px;
-display:block;
-margin-bottom:40px;
-}
-
 .grid{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-
 gap:25px;
-
 }
+
+/* 작품 카드 */
 
 .work{
-
+position:relative;
 aspect-ratio:1/1;
-
 overflow:hidden;
-
 }
 
+/* 이미지 */
+
 .work img{
-
 width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
 
+/* hover overlay */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
 height:100%;
 
-object-fit:cover;
+background:rgba(0,0,0,0.5);
+color:white;
 
-display:block;
+display:flex;
+align-items:center;
+justify-content:center;
 
+font-size:22px;
+
+opacity:0;
+
+transition:0.3s;
+}
+
+/* hover effect */
+
+.work:hover .overlay{
+opacity:1;
 }
 
 </style>
@@ -68,31 +77,29 @@ display:block;
 
 <div class="wrap">
 
-<a class="back" href="index.html">HOME</a>
-
 <h1>WORKS</h1>
 
 <div class="grid">
 
-<div class="work">
+<a href="project1.html" class="work">
 <img src="images/work1.jpg">
-</div>
+<div class="overlay">Project One</div>
+</a>
 
-<div class="work">
+<a href="project2.html" class="work">
 <img src="images/work2.jpg">
-</div>
+<div class="overlay">Project Two</div>
+</a>
 
-<div class="work">
+<a href="project3.html" class="work">
 <img src="images/work3.jpg">
-</div>
+<div class="overlay">Project Three</div>
+</a>
 
-<div class="work">
+<a href="project4.html" class="work">
 <img src="images/work4.jpg">
-</div>
-
-<div class="work">
-<img src="images/work5.jpg">
-</div>
+<div class="overlay">Project Four</div>
+</a>
 
 </div>
 
