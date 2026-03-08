@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,151 +8,46 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #111;
       background: #fff;
-      line-height: 1.5;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
+    .wrap {
+      padding: 28px 24px;
     }
-    img {
-      width: 100%;
-      display: block;
+    .site-title {
+      font-size: 20px;
+      margin-bottom: 40px;
+      font-weight: 600;
     }
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.95);
-      border-bottom: 1px solid #eee;
-      padding: 18px 24px;
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 320px;
     }
     nav a {
-      margin-left: 18px;
-      font-size: 14px;
+      color: #111;
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 1.4;
     }
-    .hero {
-      padding: 80px 24px 50px;
-    }
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 48px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .hero p {
-      max-width: 640px;
-      margin: 0;
-      font-size: 18px;
-      color: #555;
-    }
-    section {
-      padding: 24px;
-    }
-    .section-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 20px;
-      color: #666;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .card img {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      background: #f3f3f3;
-    }
-    .card h3 {
-      margin: 10px 0 4px;
-      font-size: 18px;
-    }
-    .card p {
-      margin: 0;
-      font-size: 14px;
-      color: #666;
-    }
-    .about, .contact {
-      max-width: 700px;
-    }
-    footer {
-      padding: 40px 24px;
-      font-size: 13px;
-      color: #777;
-    }
-    @media (max-width: 700px) {
-      .hero h1 { font-size: 34px; }
-      .grid { grid-template-columns: 1fr; }
-      nav a { margin-left: 12px; }
+    nav a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div><strong>ICYIC</strong></div>
+  <div class="wrap">
+    <div class="site-title">ICYIC</div>
     <nav>
-      <a href="#works">Works</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="about.html">ARTISTS</a>
+      <a href="works.html">EXHIBITIONS</a>
+      <a href="press.html">PRESS</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="https://www.instagram.com/h0t_vegetable/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
     </nav>
-  </header>
-
-  <section class="hero">
-    <h1>ICYIC</h1>
-    <p>
-      Furniture, object, and material-based works exploring form, texture, and narrative.
-    </p>
-  </section>
-
-  <section id="works">
-    <div class="section-title">Works</div>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" alt="Project 1">
-        <h3>Project One</h3>
-        <p>Chair / Material experiment / 2026</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Project 2">
-        <h3>Project Two</h3>
-        <p>Object / Surface study / 2026</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1200&auto=format&fit=crop" alt="Project 3">
-        <h3>Project Three</h3>
-        <p>Interior element / Prototype / 2025</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" alt="Project 4">
-        <h3>Project Four</h3>
-        <p>Material archive / Installation / 2025</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="section-title">About</div>
-    <p>
-      ICYIC is a portfolio space for works that move between furniture, art object, and spatial narrative.
-      The practice focuses on material transformation, minimal form, and layered storytelling.
-    </p>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="section-title">Contact</div>
-    <p>Email: yourname@email.com</p>
-    <p>Instagram: @yourinstagram</p>
-  </section>
-
-  <footer>
-    © 2026 ICYIC
-  </footer>
+  </div>
 </body>
 </html>
