@@ -4,72 +4,91 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Works - ICYIC</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: Helvetica, Arial, sans-serif;
       background: #fff;
       color: #111;
-    }
-
-    .wrap {
-      padding: 28px 24px;
+      font-family: Helvetica, Arial, sans-serif;
+      min-height: 100vh;
     }
 
     .back {
-      display: inline-block;
-      margin-bottom: 30px;
+      position: absolute;
+      top: 28px;
+      left: 24px;
       color: #111;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .back:hover {
       text-decoration: underline;
     }
 
-    h1 {
-      font-size: 60px;
-      margin: 0 0 40px;
-      font-weight: 600;
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 24px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .work img {
-      width: 100%;
-      display: block;
+    .menu a {
+      color: #111;
+      text-decoration: none;
+      font-size: 72px;
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .menu a {
+        font-size: 52px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .menu a {
+        font-size: 36px;
+      }
+
+      .back {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <a class="back" href="index.html">HOME</a>
+
   <div class="wrap">
-    <a class="back" href="index.html">HOME</a>
-    <h1>WORKS</h1>
-
-    <div class="grid">
-      <div class="work">
-        <img src="images/work1.jpg" alt="Work 1">
-      </div>
-
-      <div class="work">
-        <img src="images/work2.jpg" alt="Work 2">
-      </div>
-
-      <div class="work">
-        <img src="images/work3.jpg" alt="Work 3">
-      </div>
-
-       <div class="work">
-        <img src="images/work4.jpg" alt="Work 4">
-      </div>
+    <div class="menu">
+      <a href="ceramic.html">Ceramic</a>
+      <a href="metal.html">Metal</a>
+      <a href="glass.html">Glass</a>
+      <a href="2d.html">2D</a>
+      <a href="3d.html">3D</a>
     </div>
   </div>
+
 </body>
 </html>
