@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ceramic - ICYIC</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#fff;
+color:#111;
+font-family:Helvetica,Arial,sans-serif;
+}
+
+.back{
+position:absolute;
+top:28px;
+left:24px;
+color:#111;
+text-decoration:none;
+font-size:20px;
+}
+
+.back:hover{
+text-decoration:underline;
+}
+
+.wrap{
+padding:120px 40px 60px 40px;
+}
+
+h1{
+font-size:60px;
+margin-bottom:40px;
+font-weight:400;
+}
+
+/* 갤러리 grid */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:24px;
+
+}
+
+/* 이미지 박스 */
+
+.work{
+
+aspect-ratio:3/4;
+
+overflow:hidden;
+
+}
+
+/* 이미지 */
+
+.work img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a class="back" href="works.html">WORKS</a>
+
+<div class="wrap">
+
+<h1>Ceramic</h1>
+
+<div class="gallery">
+
+<div class="work">
+<img src="images/work1.jpg">
+</div>
+
+<div class="work">
+<img src="images/work2.jpg">
+</div>
+
+<div class="work">
+<img src="images/work3.jpg">
+</div>
+
+<div class="work">
+<img src="images/work4.jpg">
+</div>
+
+<div class="work">
+<img src="images/ceramic5.jpg">
+</div>
+
+<div class="work">
+<img src="images/ceramic6.jpg">
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
