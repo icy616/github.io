@@ -1,53 +1,56 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact - ICYIC</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #fff;
-      color: #111;
-      font-family: Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-    }
-    .wrap {
-      padding: 28px 24px;
-    }
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      color: #111;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    .back:hover {
-      text-decoration: underline;
-    }
-    h1 {
-      font-size: 60px;
-      margin: 0 0 30px;
-      font-weight: 600;
-    }
-    p, a {
-      font-size: 24px;
-      line-height: 1.4;
-      color: #111;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <a class="back" href="index.html">HOME</a>
-    <h1>CONTACT</h1>
-    <p>Email: asdf616asdf@naver.com</p>
-    <p><a href="https://www.instagram.com/h0t_vegetable/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-  </div>
-</body>
-</html>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.wrap {
+  padding: 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  text-align: center;
+}
+
+.back {
+  position: absolute;
+  top: 28px;
+  left: 24px;
+
+  color: #111;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 24px;
+  line-height: 1.4;
+  color: #777;
+}
+
+p a {
+  color: #777;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
