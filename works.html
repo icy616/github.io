@@ -1,61 +1,102 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Works - ICYIC</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #fff;
-      color: #111;
-      font-family: Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-    }
-    .wrap {
-      padding: 28px 24px;
-    }
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      color: #111;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    .back:hover {
-      text-decoration: underline;
-    }
-    h1 {
-      font-size: 60px;
-      margin: 0 0 30px;
-      font-weight: 600;
-    }
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .list a {
-      color: #111;
-      text-decoration: none;
-      font-size: 36px;
-      line-height: 1.1;
-    }
-    .list a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Works - ICYIC</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Helvetica,Arial,sans-serif;
+background:white;
+color:#111;
+}
+
+.wrap{
+padding:40px;
+}
+
+h1{
+font-size:60px;
+margin-bottom:40px;
+}
+
+.back{
+text-decoration:none;
+color:black;
+font-size:20px;
+display:block;
+margin-bottom:40px;
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.work{
+
+aspect-ratio:1/1;
+
+overflow:hidden;
+
+}
+
+.work img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <a class="back" href="index.html">HOME</a>
-    <h1>WORKS</h1>
-    <div class="list">
-      <a href="#">Project 01</a>
-      <a href="#">Project 02</a>
-      <a href="#">Project 03</a>
-    </div>
-  </div>
+
+<div class="wrap">
+
+<a class="back" href="index.html">HOME</a>
+
+<h1>WORKS</h1>
+
+<div class="grid">
+
+<div class="work">
+<img src="images/work1.jpg">
+</div>
+
+<div class="work">
+<img src="images/work2.jpg">
+</div>
+
+<div class="work">
+<img src="images/work3.jpg">
+</div>
+
+<div class="work">
+<img src="images/work4.jpg">
+</div>
+
+<div class="work">
+<img src="images/work5.jpg">
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
