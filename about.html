@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About - ICYIC</title>
+  <title>Contact - ICYIC</title>
 
   <style>
     * {
@@ -20,6 +20,7 @@
     .page {
       min-height: 100vh;
       padding: 40px 34px 50px 34px;
+      position: relative;
     }
 
     .back {
@@ -36,94 +37,58 @@
     }
 
     .title {
-      margin: 0 0 14px 0;
+      margin: 0;
       font-size: 78px;
       line-height: 0.95;
       font-weight: 700;
       letter-spacing: -0.035em;
     }
 
-    .intro {
-      margin: 0;
-      max-width: 1520px;
-      font-size: 78px;
-      line-height: 1.05;
-      font-weight: 700;
-      letter-spacing: -0.045em;
+    .contact-info {
+      position: absolute;
+      right: 120px;
+      bottom: 90px;
+      text-align: left;
     }
 
-    .info-grid {
-      margin-top: 170px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      column-gap: 220px;
-      row-gap: 0;
-      align-items: start;
-    }
-
-    .education {
-      grid-column: 2;
-      grid-row: 1;
-      margin-bottom: 120px;
-    }
-
-    .experience {
-      grid-column: 1;
-      grid-row: 2;
-    }
-
-    .awards {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .section-title {
+    .contact-label {
       margin: 0 0 18px 0;
-      font-size: 30px;
+      font-size: 32px;
       line-height: 1.1;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
-    .section-body {
+    .contact-mail {
       margin: 0;
-      font-size: 18px;
-      line-height: 1.65;
+      font-size: 22px;
+      line-height: 1.35;
       font-weight: 600;
       letter-spacing: -0.015em;
+      color: #111;
+      text-decoration: none;
     }
 
-    .section-body p {
-      margin: 0 0 22px 0;
-    }
-
-    .experience .section-body div,
-    .awards .section-body div {
-      white-space: nowrap;
-      margin-bottom: 6px;
+    .contact-mail:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 1600px) {
-      .title,
-      .intro {
+      .title {
         font-size: 64px;
       }
 
-      .info-grid {
-        margin-top: 140px;
-        column-gap: 140px;
+      .contact-info {
+        right: 90px;
+        bottom: 70px;
       }
 
-      .education {
-        margin-bottom: 100px;
-      }
-
-      .section-title {
+      .contact-label {
         font-size: 28px;
       }
 
-      .section-body {
-        font-size: 16px;
+      .contact-mail {
+        font-size: 20px;
       }
     }
 
@@ -137,47 +102,27 @@
         margin-bottom: 18px;
       }
 
-      .title,
-      .intro {
+      .title {
         font-size: 48px;
       }
 
-      .info-grid {
-        margin-top: 90px;
-        grid-template-columns: 1fr;
-        row-gap: 56px;
-        column-gap: 0;
+      .contact-info {
+        position: static;
+        margin-top: 280px;
+        text-align: left;
       }
 
-      .education,
-      .experience,
-      .awards {
-        grid-column: 1;
-        margin-bottom: 0;
-      }
-
-      .education { grid-row: 1; }
-      .experience { grid-row: 2; }
-      .awards { grid-row: 3; }
-
-      .section-title {
+      .contact-label {
         font-size: 24px;
       }
 
-      .section-body {
-        font-size: 17px;
-        line-height: 1.55;
-      }
-
-      .experience .section-body div,
-      .awards .section-body div {
-        white-space: normal;
+      .contact-mail {
+        font-size: 18px;
       }
     }
 
     @media (max-width: 700px) {
-      .title,
-      .intro {
+      .title {
         font-size: 34px;
       }
 
@@ -185,13 +130,16 @@
         font-size: 28px;
       }
 
-      .section-title {
+      .contact-info {
+        margin-top: 180px;
+      }
+
+      .contact-label {
         font-size: 22px;
       }
 
-      .section-body {
+      .contact-mail {
         font-size: 16px;
-        line-height: 1.45;
       }
     }
   </style>
@@ -200,49 +148,12 @@
   <main class="page">
     <a class="back" href="index.html" aria-label="Back to home">←</a>
 
-    <h1 class="title">ABOUT</h1>
+    <h1 class="title">CONTACT</h1>
 
-    <p class="intro">Somewhere between craft and design.<br>And a unexpected book design.</p>
-
-    <section class="info-grid">
-      <div class="education">
-        <h2 class="section-title">Education</h2>
-        <div class="section-body">
-          <p>Hongik University, Seoul, Korea (2018-2025)<br>
-          B.F.A. Candidate, School of Design Convergence, College of Design<br>
-          Double Major in Ceramics and Glass, College of Fine Arts</p>
-
-          <p>Hongik University Graduate School of Fine Arts(2026-)<br>
-          M.F.A. in Metal Art and Design</p>
-        </div>
-      </div>
-
-      <div class="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="section-body">
-          <div>Narae Design Editorial designer (2020.11-2022.2)</div>
-          <div>LAB VOID (UX/UX study group) UX, UI planning and design exhibition (2021.03-2021.12)</div>
-          <div>Medical Device Design Agency ‘GO DESIGN’ Summer Internship (2023.06-2023.07)</div>
-          <div>Groundseesaw Supporters (2023.07-2023.09)</div>
-          <div>1986 Production Supporters (2023.07-2023.11)</div>
-          <div>KAIST Visual neurodynamics LAB Undergraduate-level researcher (2024.06-2024.08)</div>
-          <div>Hanyang univ. Human eXperience LAB Undergraduate-level researcher (2025.03-2025.09)</div>
-        </div>
-      </div>
-
-      <div class="awards">
-        <h2 class="section-title">Awards</h2>
-        <div class="section-body">
-          <div>Design Convergence Studio(1) Excellence Award (2021)</div>
-          <div>International Busan Design Awards IDEA Awards (2022)</div>
-          <div>International Busan Design Awards IDEA Awards (2022)</div>
-          <div>Groundseesaw Supporters The Grand Prize (2023)</div>
-          <div>International Busan Design Awards IDEA Awards (2023)</div>
-          <div>Start-up Item Competition Presidential Award (2023)</div>
-          <div>Asian Design Platform Design Contest Winner (2023)</div>
-        </div>
-      </div>
-    </section>
+    <div class="contact-info">
+      <h2 class="contact-label">e-mail</h2>
+      <a class="contact-mail" href="mailto:asdf616asdf@naver.com">asdf616asdf@naver.com</a>
+    </div>
   </main>
 </body>
 </html>
