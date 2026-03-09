@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Craft and Design - ICYIC</title>
 
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -28,7 +34,7 @@
       color: #111;
       font-size: 40px;
       line-height: 1;
-      margin-bottom: 22px;
+      margin-bottom: 16px;
     }
 
     .back:hover {
@@ -36,7 +42,7 @@
     }
 
     .title {
-      margin: 0;
+      margin: 0 0 52px 0;
       font-size: 78px;
       line-height: 0.95;
       font-weight: 700;
@@ -44,85 +50,99 @@
     }
 
     .layout {
-      margin-top: 56px;
       display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      column-gap: 70px;
+      grid-template-columns: 260px minmax(0, 1fr);
+      column-gap: 56px;
       align-items: start;
     }
 
-    .work-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      padding-top: 6px;
+    /* 왼쪽 메뉴 sticky */
+    .sidebar {
+      position: sticky;
+      top: 36px;
+      align-self: start;
     }
 
-    .work-button {
+    .category-block {
+      margin-bottom: 34px;
+    }
+
+    .category-button {
       appearance: none;
       background: none;
       border: 0;
       padding: 0;
-      margin: 0;
+      margin: 0 0 12px 0;
       text-align: left;
       font: inherit;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.1;
-      font-weight: 600;
-      color: #b7b7b7;
-      cursor: pointer;
-      transition: color .2s ease;
-    }
-
-    .work-button:hover {
-      color: #666;
-    }
-
-    .work-button.active {
+      font-weight: 700;
       color: #111;
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+
+    .category-button:hover {
+      opacity: 0.65;
+    }
+
+    .category-button.active {
+      opacity: 1;
+    }
+
+    .subcategory-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .subcategory-item {
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 500;
+      color: #b7b7b7;
+      letter-spacing: -0.01em;
     }
 
     .viewer {
       min-width: 0;
     }
 
-    .image-grid {
+    .grid {
       display: grid;
-      grid-template-columns: 0.62fr 1.24fr 1.24fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .image-box {
-      background: #d9d9d9;
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .image-box.tall {
-      aspect-ratio: 0.62 / 1.5;
-    }
-
-    .image-box.wide {
-      aspect-ratio: 1 / 1.5;
-    }
-
-    .image-box img {
-      width: 100%;
-      height: 100%;
+    .work-card {
       display: block;
-      object-fit: cover;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .description {
-      margin-top: 28px;
-      max-width: 980px;
-      font-size: 18px;
-      line-height: 1.35;
+    .work-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background-color: #d9d9d9;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .work-card:hover .work-thumb {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* 카드 밑 텍스트가 필요한 경우 대비 */
+    .work-caption {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.3;
       font-weight: 600;
-      letter-spacing: -0.015em;
-      color: #111;
-      word-break: keep-all;
     }
 
     @media (max-width: 1400px) {
@@ -131,27 +151,27 @@
       }
 
       .layout {
-        grid-template-columns: 170px minmax(0, 1fr);
+        grid-template-columns: 220px minmax(0, 1fr);
         column-gap: 44px;
       }
 
-      .work-button {
-        font-size: 18px;
+      .category-button {
+        font-size: 20px;
       }
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1000px) {
       .page {
         padding: 28px 24px 40px 24px;
       }
 
       .back {
         font-size: 34px;
-        margin-bottom: 18px;
       }
 
       .title {
         font-size: 48px;
+        margin-bottom: 36px;
       }
 
       .layout {
@@ -159,17 +179,16 @@
         row-gap: 34px;
       }
 
-      .work-list {
-        gap: 10px;
+      .sidebar {
+        position: static;
       }
 
-      .image-grid {
+      .grid {
         grid-template-columns: 1fr;
       }
 
-      .image-box.tall,
-      .image-box.wide {
-        aspect-ratio: 4 / 5;
+      .category-button {
+        font-size: 18px;
       }
     }
 
@@ -182,12 +201,8 @@
         font-size: 28px;
       }
 
-      .work-button {
-        font-size: 17px;
-      }
-
-      .description {
-        font-size: 16px;
+      .subcategory-item {
+        font-size: 13px;
       }
     }
   </style>
@@ -199,145 +214,173 @@
     <h1 class="title">Craft and Design</h1>
 
     <section class="layout">
-      <div class="work-list">
-        <button class="work-button active" data-work="lazy-seires">Lazy seires (2026)</button>
-        <button class="work-button" data-work="bubble-bed">Bubble bed (2026)</button>
-        <button class="work-button" data-work="composition">Composition (2023)</button>
-        <button class="work-button" data-work="cubism">Cubism (2026)</button>
-        <button class="work-button" data-work="keen-healer">Keen healer (2026)</button>
-        <button class="work-button" data-work="skin-vase">Skin vase (2026)</button>
-        <button class="work-button" data-work="pivot-joint">Pivot joint (2026)</button>
-        <button class="work-button" data-work="scar-jar">Scar Jar (2026)</button>
-        <button class="work-button" data-work="flower">Flower (2026)</button>
-      </div>
-
-      <div class="viewer">
-        <div class="image-grid">
-          <div class="image-box tall">
-            <img id="img1" src="images/craft/lazy-seires-1.jpg" alt="work image 1">
-          </div>
-
-          <div class="image-box wide">
-            <img id="img2" src="images/craft/lazy-seires-2.jpg" alt="work image 2">
-          </div>
-
-          <div class="image-box wide">
-            <img id="img3" src="images/craft/lazy-seires-3.jpg" alt="work image 3">
+      <!-- LEFT MENU -->
+      <aside class="sidebar">
+        <div class="category-block">
+          <button class="category-button active" data-category="lazy-series">Lazy series</button>
+          <div class="subcategory-list">
+            <div class="subcategory-item">Lazy Temple (2026)</div>
+            <div class="subcategory-item">Lazy Temple (2023)</div>
+            <div class="subcategory-item">Lazy Jar (2023)</div>
+            <div class="subcategory-item">Lazy Lamp (2023)</div>
           </div>
         </div>
 
-        <div class="description" id="description">
-          Lazy seires explores an in-between state of objecthood, softness, and domestic humor through craft-based form and design logic.
+        <div class="category-block">
+          <button class="category-button" data-category="composition">Composition</button>
+          <div class="subcategory-list">
+            <div class="subcategory-item">Composition (2023)</div>
+          </div>
         </div>
-      </div>
+
+        <div class="category-block">
+          <button class="category-button" data-category="object">Object</button>
+          <div class="subcategory-list">
+            <div class="subcategory-item">Bubble bed (2023)</div>
+            <div class="subcategory-item">Keen healer (2022)</div>
+            <div class="subcategory-item">Flower in caustics (2022)</div>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <button class="category-button" data-category="furniture">Furniture</button>
+          <div class="subcategory-list">
+            <div class="subcategory-item">Pivot Joint (2021)</div>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <button class="category-button" data-category="ceramic">Ceramic</button>
+          <div class="subcategory-list">
+            <div class="subcategory-item">Moon Jar (2026)</div>
+            <div class="subcategory-item">Lean series (2023)</div>
+            <div class="subcategory-item">Cubism (2022)</div>
+            <div class="subcategory-item">Scar Jar (2021)</div>
+            <div class="subcategory-item">Skin vase (2021)</div>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <button class="category-button" data-category="metal">Metal</button>
+          <div class="subcategory-list">
+            <div class="subcategory-item">—</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT GRID -->
+      <section class="viewer">
+        <div class="grid">
+          <a class="work-card" id="card1" href="#">
+            <div class="work-thumb" id="thumb1"></div>
+          </a>
+
+          <a class="work-card" id="card2" href="#">
+            <div class="work-thumb" id="thumb2"></div>
+          </a>
+
+          <a class="work-card" id="card3" href="#">
+            <div class="work-thumb" id="thumb3"></div>
+          </a>
+
+          <a class="work-card" id="card4" href="#">
+            <div class="work-thumb" id="thumb4"></div>
+          </a>
+
+          <a class="work-card" id="card5" href="#">
+            <div class="work-thumb" id="thumb5"></div>
+          </a>
+
+          <a class="work-card" id="card6" href="#">
+            <div class="work-thumb" id="thumb6"></div>
+          </a>
+        </div>
+      </section>
     </section>
   </main>
 
   <script>
-    const works = {
-      "lazy-seires": {
-        images: [
-          "images/craft/lazy-seires-1.jpg",
-          "images/craft/lazy-seires-2.jpg",
-          "images/craft/lazy-seires-3.jpg"
-        ],
-        description:
-          "Lazy seires explores an in-between state of objecthood, softness, and domestic humor through craft-based form and design logic."
-      },
-      "bubble-bed": {
-        images: [
-          "images/craft/bubble-bed-1.jpg",
-          "images/craft/bubble-bed-2.jpg",
-          "images/craft/bubble-bed-3.jpg"
-        ],
-        description:
-          "Bubble bed investigates softness, body memory, and inflated volume through a furniture-like sculptural language."
-      },
-      "composition": {
-        images: [
-          "images/craft/composition-1.jpg",
-          "images/craft/composition-2.jpg",
-          "images/craft/composition-3.jpg"
-        ],
-        description:
-          "Composition focuses on the relationship between modular form, balance, and spatial tension."
-      },
-      "cubism": {
-        images: [
-          "images/craft/cubism-1.jpg",
-          "images/craft/cubism-2.jpg",
-          "images/craft/cubism-3.jpg"
-        ],
-        description:
-          "Cubism reinterprets fragmented volume and planar construction into a tactile object-based study."
-      },
-      "keen-healer": {
-        images: [
-          "images/craft/keen-healer-1.jpg",
-          "images/craft/keen-healer-2.jpg",
-          "images/craft/keen-healer-3.jpg"
-        ],
-        description:
-          "Keen healer considers repair, scar, and vulnerability through a crafted object vocabulary."
-      },
-      "skin-vase": {
-        images: [
-          "images/craft/skin-vase-1.jpg",
-          "images/craft/skin-vase-2.jpg",
-          "images/craft/skin-vase-3.jpg"
-        ],
-        description:
-          "Skin vase explores surface as membrane, container, and emotional interface."
-      },
-      "pivot-joint": {
-        images: [
-          "images/craft/pivot-joint-1.jpg",
-          "images/craft/pivot-joint-2.jpg",
-          "images/craft/pivot-joint-3.jpg"
-        ],
-        description:
-          "Pivot joint investigates movement, connection, and mechanical softness within crafted form."
-      },
-      "scar-jar": {
-        images: [
-          "images/craft/scar-jar-1.jpg",
-          "images/craft/scar-jar-2.jpg",
-          "images/craft/scar-jar-3.jpg"
-        ],
-        description:
-          "Scar Jar traces marks, healing, and rupture through a vessel format."
-      },
-      "flower": {
-        images: [
-          "images/craft/flower-1.jpg",
-          "images/craft/flower-2.jpg",
-          "images/craft/flower-3.jpg"
-        ],
-        description:
-          "Flower translates decorative and organic references into a crafted sculptural composition."
-      }
+    const categories = {
+      "lazy-series": [
+        { image: "images/craft/lazy-series-1.jpg", link: "#" },
+        { image: "images/craft/lazy-series-2.jpg", link: "#" },
+        { image: "images/craft/lazy-series-3.jpg", link: "#" },
+        { image: "images/craft/lazy-series-4.jpg", link: "#" },
+        { image: "images/craft/lazy-series-5.jpg", link: "#" },
+        { image: "images/craft/lazy-series-6.jpg", link: "#" }
+      ],
+      "composition": [
+        { image: "images/craft/composition-1.jpg", link: "#" },
+        { image: "images/craft/composition-2.jpg", link: "#" },
+        { image: "images/craft/composition-3.jpg", link: "#" },
+        { image: "images/craft/composition-4.jpg", link: "#" },
+        { image: "images/craft/composition-5.jpg", link: "#" },
+        { image: "images/craft/composition-6.jpg", link: "#" }
+      ],
+      "object": [
+        { image: "images/craft/object-1.jpg", link: "#" },
+        { image: "images/craft/object-2.jpg", link: "#" },
+        { image: "images/craft/object-3.jpg", link: "#" },
+        { image: "images/craft/object-4.jpg", link: "#" },
+        { image: "images/craft/object-5.jpg", link: "#" },
+        { image: "images/craft/object-6.jpg", link: "#" }
+      ],
+      "furniture": [
+        { image: "images/craft/furniture-1.jpg", link: "#" },
+        { image: "images/craft/furniture-2.jpg", link: "#" },
+        { image: "images/craft/furniture-3.jpg", link: "#" },
+        { image: "images/craft/furniture-4.jpg", link: "#" },
+        { image: "images/craft/furniture-5.jpg", link: "#" },
+        { image: "images/craft/furniture-6.jpg", link: "#" }
+      ],
+      "ceramic": [
+        { image: "images/craft/ceramic-1.jpg", link: "#" },
+        { image: "images/craft/ceramic-2.jpg", link: "#" },
+        { image: "images/craft/ceramic-3.jpg", link: "#" },
+        { image: "images/craft/ceramic-4.jpg", link: "#" },
+        { image: "images/craft/ceramic-5.jpg", link: "#" },
+        { image: "images/craft/ceramic-6.jpg", link: "#" }
+      ],
+      "metal": [
+        { image: "images/craft/metal-1.jpg", link: "#" },
+        { image: "images/craft/metal-2.jpg", link: "#" },
+        { image: "images/craft/metal-3.jpg", link: "#" },
+        { image: "images/craft/metal-4.jpg", link: "#" },
+        { image: "images/craft/metal-5.jpg", link: "#" },
+        { image: "images/craft/metal-6.jpg", link: "#" }
+      ]
     };
 
-    const buttons = document.querySelectorAll(".work-button");
-    const img1 = document.getElementById("img1");
-    const img2 = document.getElementById("img2");
-    const img3 = document.getElementById("img3");
-    const description = document.getElementById("description");
+    const buttons = document.querySelectorAll(".category-button");
+
+    function renderCategory(key) {
+      const items = categories[key];
+
+      for (let i = 0; i < 6; i++) {
+        const card = document.getElementById(`card${i + 1}`);
+        const thumb = document.getElementById(`thumb${i + 1}`);
+
+        if (items[i]) {
+          thumb.style.backgroundImage = `url('${items[i].image}')`;
+          card.href = items[i].link || "#";
+          card.style.display = "block";
+        } else {
+          thumb.style.backgroundImage = "none";
+          card.href = "#";
+          card.style.display = "none";
+        }
+      }
+    }
 
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        const key = button.dataset.work;
-        const work = works[key];
-
         buttons.forEach((btn) => btn.classList.remove("active"));
         button.classList.add("active");
-
-        img1.src = work.images[0];
-        img2.src = work.images[1];
-        img3.src = work.images[2];
-        description.textContent = work.description;
+        renderCategory(button.dataset.category);
       });
     });
+
+    renderCategory("lazy-series");
   </script>
 </body>
 </html>
