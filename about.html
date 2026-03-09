@@ -56,7 +56,7 @@
       margin-top: 170px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 120px;
+      column-gap: 260px;
       row-gap: 0;
       align-items: start;
     }
@@ -88,10 +88,17 @@
     .section-body {
       margin: 0;
       font-size: 22px;
-      line-height: 1.34;
+      line-height: 1.8;
       font-weight: 600;
-      white-space: pre-line;
       letter-spacing: -0.015em;
+    }
+
+    .section-body div {
+      margin-bottom: 6px;
+    }
+
+    .section-body p {
+      margin: 0 0 22px 0;
     }
 
     @media (max-width: 1600px) {
@@ -102,7 +109,7 @@
 
       .info-grid {
         margin-top: 140px;
-        column-gap: 90px;
+        column-gap: 180px;
       }
 
       .education {
@@ -137,6 +144,7 @@
         margin-top: 90px;
         grid-template-columns: 1fr;
         row-gap: 56px;
+        column-gap: 0;
       }
 
       .education,
@@ -156,6 +164,7 @@
 
       .section-body {
         font-size: 17px;
+        line-height: 1.55;
       }
     }
 
@@ -191,34 +200,40 @@
     <section class="info-grid">
       <div class="education">
         <h2 class="section-title">Education</h2>
-        <p class="section-body">Hongik University, Seoul, Korea (2018-2025)
-B.F.A. Candidate, School of Design Convergence, College of Design
-Double Major in Ceramics and Glass, College of Fine Arts
+        <div class="section-body">
+          <p>Hongik University, Seoul, Korea (2018-2025)<br>
+          B.F.A. Candidate, School of Design Convergence, College of Design<br>
+          Double Major in Ceramics and Glass, College of Fine Arts</p>
 
-Hongik University Graduate School of Fine Arts(2026-)
-M.F.A. in Metal Art and Design</p>
+          <p>Hongik University Graduate School of Fine Arts(2026-)<br>
+          M.F.A. in Metal Art and Design</p>
+        </div>
       </div>
 
       <div class="experience">
         <h2 class="section-title">Experience</h2>
-        <p class="section-body">Narae Design Editorial designer (2020.11-2022.2)
-LAB VOID (UX/UX study group) UX, UI planning and design exhibition (2021.03-2021.12)
-Medical Device Design Agency ‘GO DESIGN’ Summer Internship (2023.06-2023.07)
-Groundseesaw Supporters (2023.07-2023.09)
-1986 Production Supporters (2023.07-2023.11)
-KAIST Visual neurodynamics LAB Undergraduate-level researcher (2024.06-2024.08)
-Hanyang univ. Human eXperience LAB Undergraduate-level researcher(2025.03-2025.09)</p>
+        <div class="section-body">
+          <div>Narae Design Editorial designer (2020.11-2022.2)</div>
+          <div>LAB VOID (UX/UX study group) UX, UI planning and design exhibition (2021.03-2021.12)</div>
+          <div>Medical Device Design Agency ‘GO DESIGN’ Summer Internship (2023.06-2023.07)</div>
+          <div>Groundseesaw Supporters (2023.07-2023.09)</div>
+          <div>1986 Production Supporters (2023.07-2023.11)</div>
+          <div>KAIST Visual neurodynamics LAB Undergraduate-level researcher (2024.06-2024.08)</div>
+          <div>Hanyang univ. Human eXperience LAB Undergraduate-level researcher (2025.03-2025.09)</div>
+        </div>
       </div>
 
       <div class="awards">
         <h2 class="section-title">Awards</h2>
-        <p class="section-body">Design Convergence Studio(1) Excellence Award (2021)
-International Busan Design Awards IDEA Awards (2022)
-International Busan Design Awards IDEA Awards (2022)
-Groundseesaw Supporters The Grand Prize (2023)
-International Busan Design Awards IDEA Awards (2023)
-Start-up Item Competition Presidential Award (2023)
-Asian Design Platform Design Contest Winner (2023)</p>
+        <div class="section-body">
+          <div>Design Convergence Studio(1) Excellence Award (2021)</div>
+          <div>International Busan Design Awards IDEA Awards (2022)</div>
+          <div>International Busan Design Awards IDEA Awards (2022)</div>
+          <div>Groundseesaw Supporters The Grand Prize (2023)</div>
+          <div>International Busan Design Awards IDEA Awards (2023)</div>
+          <div>Start-up Item Competition Presidential Award (2023)</div>
+          <div>Asian Design Platform Design Contest Winner (2023)</div>
+        </div>
       </div>
     </section>
   </main>
