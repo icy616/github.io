@@ -28,8 +28,10 @@
       padding: 40px 34px 50px 34px;
     }
 
+    /* works.html 과 동일한 상단 구조 */
     .back {
-      display: inline-block;
+      display: block;
+      width: fit-content;
       text-decoration: none;
       color: #111;
       font-size: 40px;
@@ -42,7 +44,8 @@
     }
 
     .title-link {
-      display: inline-block;
+      display: block;
+      width: fit-content;
       text-decoration: none;
       color: #111;
     }
@@ -192,12 +195,12 @@
     }
 
     @media (max-width: 700px) {
-      .title {
-        font-size: 34px;
-      }
-
       .back {
         font-size: 28px;
+      }
+
+      .title {
+        font-size: 34px;
       }
 
       .category-title {
