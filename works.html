@@ -9,201 +9,185 @@
 <title>Works - ICYIC</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
 }
 
 body{
-  margin:0;
-  background:#ffffff;
-  color:#111;
-  font-family:Helvetica, Arial, sans-serif;
+margin:0;
+background:#ffffff;
+color:#111;
+font-family:Helvetica, Arial, sans-serif;
 }
 
 .page{
-  min-height:100vh;
-  padding:40px 34px 50px 34px;
+min-height:100vh;
+padding:40px 34px 50px 34px;
+position:relative;
 }
 
 .back{
-  display:block;
-  width:fit-content;
-  text-decoration:none;
-  color:#111;
-  font-size:40px;
-  line-height:1;
-  margin-bottom:10px;
+display:block;
+width:fit-content;
+text-decoration:none;
+color:#111;
+font-size:40px;
+line-height:1;
+margin-bottom:10px;
 }
 
 .back:hover{
-  opacity:.65;
+opacity:.65;
 }
 
 .title{
-  margin:0;
-  font-size:78px;
-  line-height:0.95;
-  font-weight:700;
-  letter-spacing:-0.035em;
+margin:0;
+font-size:78px;
+line-height:0.95;
+font-weight:700;
+letter-spacing:-0.035em;
 }
 
-/* 메뉴 전체를 화면 가운데 배치 */
+/* 메뉴 영역 */
+
 .menu-wrap{
-  min-height:calc(100vh - 180px);
-  display:grid;
-  place-items:center;
+height:70vh;
+position:relative;
 }
 
-/* 3칸 구조 */
-.menu-grid{
-  display:grid;
-  grid-template-columns: 430px 180px 430px;
-  align-items:center;
-  column-gap:10px;
+/* 가운데 & */
+
+.menu-and{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+font-family:"Inter", sans-serif;
+font-weight:100;
+font-size:200px;
+letter-spacing:-0.03em;
 }
 
-/* 왼쪽은 오른쪽 정렬 */
+/* 왼쪽 텍스트 */
+
 .menu-left{
-  text-align:right;
+position:absolute;
+top:50%;
+left:34px;
+transform:translateY(-50%);
+text-align:left;
 }
 
-/* 오른쪽은 왼쪽 정렬 */
-.menu-right{
-  text-align:left;
+.menu-left a{
+text-decoration:none;
+color:#111;
+font-size:130px;
+line-height:1.05;
+font-weight:700;
+letter-spacing:-0.05em;
 }
+
+.menu-left a:hover{
+opacity:.6;
+}
+
+/* 오른쪽 텍스트 */
+
+.menu-right{
+position:absolute;
+top:50%;
+right:34px;
+transform:translateY(-50%);
+text-align:left;
+}
+
+.menu-right a{
+text-decoration:none;
+color:#111;
+font-size:130px;
+line-height:1.05;
+font-weight:700;
+letter-spacing:-0.05em;
+}
+
+.menu-right a:hover{
+opacity:.6;
+}
+
+
+/* 반응형 */
+
+@media (max-width:1400px){
 
 .menu-left a,
 .menu-right a{
-  display:inline-block;
-  text-decoration:none;
-  color:#111;
-  font-size:130px;
-  line-height:1.02;
-  font-weight:700;
-  letter-spacing:-0.05em;
-  transition:opacity .25s ease;
+font-size:90px;
 }
 
-.menu-left a:hover,
-.menu-right a:hover{
-  opacity:.6;
-}
-
-/* ultra thin sans 느낌 */
 .menu-and{
-font-family:"Inter", sans-serif;
-font-weight:100;
-font-size:120px;
-letter-spacing:-0.04em;
+font-size:150px;
 }
 
-@media (max-width:1600px){
-  .title{
-    font-size:64px;
-  }
-
-  .menu-grid{
-    grid-template-columns: 340px 140px 340px;
-  }
-
-  .menu-left a,
-  .menu-right a{
-    font-size:104px;
-  }
-
-  .menu-and{
-    font-size:98px;
-  }
 }
 
-@media (max-width:1200px){
-  .page{
-    padding:28px 24px 40px 24px;
-  }
+@media (max-width:900px){
 
-  .back{
-    font-size:34px;
-    margin-bottom:8px;
-  }
-
-  .title{
-    font-size:48px;
-  }
-
-  .menu-wrap{
-    min-height:calc(100vh - 140px);
-  }
-
-  .menu-grid{
-    grid-template-columns: 250px 100px 250px;
-  }
-
-  .menu-left a,
-  .menu-right a{
-    font-size:76px;
-  }
-
-  .menu-and{
-    font-size:72px;
-  }
+.menu-left,
+.menu-right{
+position:static;
+transform:none;
+text-align:center;
+margin-top:40px;
 }
 
-@media (max-width:700px){
-  .back{
-    font-size:28px;
-  }
-
-  .title{
-    font-size:34px;
-  }
-
-  .menu-wrap{
-    min-height:auto;
-    padding-top:80px;
-  }
-
-  .menu-grid{
-    grid-template-columns:1fr;
-    row-gap:18px;
-  }
-
-  .menu-left,
-  .menu-right{
-    text-align:center;
-  }
-
-  .menu-left a,
-  .menu-right a{
-    font-size:46px;
-  }
-
-  .menu-and{
-    font-size:52px;
-    transform:none;
-  }
+.menu-wrap{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
+
+.menu-and{
+position:static;
+transform:none;
+margin:40px 0;
+}
+
+}
+
 </style>
 </head>
 
 <body>
+
 <main class="page">
-  <a class="back" href="index.html">←</a>
 
-  <h1 class="title">WORKS</h1>
+<a class="back" href="index.html">←</a>
 
-  <div class="menu-wrap">
-    <div class="menu-grid">
-      <div class="menu-left">
-        <a href="craft-design.html">Craft and<br>Design</a>
-      </div>
+<h1 class="title">WORKS</h1>
 
-      <div class="menu-and">&amp;</div>
+<div class="menu-wrap">
 
-      <div class="menu-right">
-        <a href="2d-3d.html">2D and<br>3D</a>
-      </div>
-    </div>
-  </div>
+<div class="menu-left">
+<a href="craft-design.html">
+Craft and<br>
+Design
+</a>
+</div>
+
+<div class="menu-and">&</div>
+
+<div class="menu-right">
+<a href="2d-3d.html">
+2D and<br>
+3D
+</a>
+</div>
+
+</div>
+
 </main>
+
 </body>
 </html>
