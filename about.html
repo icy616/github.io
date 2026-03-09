@@ -55,8 +55,8 @@
     .info-grid {
       margin-top: 170px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 260px;
+      grid-template-columns: 1.1fr 0.9fr;
+      column-gap: 220px;
       row-gap: 0;
       align-items: start;
     }
@@ -87,18 +87,20 @@
 
     .section-body {
       margin: 0;
-      font-size: 22px;
-      line-height: 1.8;
+      font-size: 18px;
+      line-height: 1.65;
       font-weight: 600;
       letter-spacing: -0.015em;
     }
 
-    .section-body div {
-      margin-bottom: 6px;
-    }
-
     .section-body p {
       margin: 0 0 22px 0;
+    }
+
+    .experience .section-body div,
+    .awards .section-body div {
+      white-space: nowrap;
+      margin-bottom: 6px;
     }
 
     @media (max-width: 1600px) {
@@ -109,7 +111,7 @@
 
       .info-grid {
         margin-top: 140px;
-        column-gap: 180px;
+        column-gap: 140px;
       }
 
       .education {
@@ -121,7 +123,7 @@
       }
 
       .section-body {
-        font-size: 20px;
+        font-size: 16px;
       }
     }
 
@@ -165,6 +167,11 @@
       .section-body {
         font-size: 17px;
         line-height: 1.55;
+      }
+
+      .experience .section-body div,
+      .awards .section-body div {
+        white-space: normal;
       }
     }
 
