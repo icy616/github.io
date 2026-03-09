@@ -119,16 +119,15 @@
 
     /* CENTER */
     .content-area {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
+  min-width: 0;
+  display: grid;
+  justify-content: center;
+}
 
-    .detail-wrap {
-      width: min(565px, calc(100vw - 80px));
-      margin: 0 auto;
-    }
+.detail-wrap {
+  width: 565px;
+  max-width: 100%;
+}
 
     .image-stack {
       display: flex;
