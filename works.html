@@ -1,189 +1,201 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Works - ICYIC</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Works - ICYIC</title>
 
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #111;
-      font-family: Helvetica, Arial, sans-serif;
-    }
+<link rel="icon" type="image/png" href="images/favicon.png">
 
-    .page {
-      min-height: 100vh;
-      padding: 40px 34px 50px 34px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
 
-    .back {
-      display: inline-block;
-      text-decoration: none;
-      color: #111;
-      font-size: 40px;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
+<style>
 
-    .back:hover {
-      opacity: 0.65;
-    }
+*{
+box-sizing:border-box;
+}
 
-    .title {
-      margin: 0;
-      font-size: 78px;
-      line-height: 0.95;
-      font-weight: 700;
-      letter-spacing: -0.035em;
-    }
+body{
+margin:0;
+background:#ffffff;
+color:#111;
+font-family:Helvetica, Arial, sans-serif;
+}
 
-    /* WORKS 시작점에 맞춘 메뉴 영역 */
-    .menu {
-      margin-top: 48px;
-      margin-left: 0;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      gap: 56px;
-      padding-left: 0;
-    }
+.page{
+min-height:100vh;
+padding:40px 34px 50px 34px;
+}
 
-    .left,
-    .right {
-      display: block;
-    }
+.back{
+display:inline-block;
+text-decoration:none;
+color:#111;
+font-size:40px;
+line-height:1;
+margin-bottom:10px;
+}
 
-    .left {
-      text-align: left;
-    }
+.back:hover{
+opacity:0.65;
+}
 
-    .right {
-      text-align: right;
-    }
+.title{
+margin:0;
+font-size:78px;
+line-height:0.95;
+font-weight:700;
+letter-spacing:-0.035em;
+}
 
-    .menu a {
-      text-decoration: none;
-      color: #b7b7b7;
-      font-size: 92px;
-      line-height: 1.02;
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      display: block;
-      transition: color .25s ease, opacity .25s ease;
-    }
+/* 메뉴 */
 
-    .menu a:hover {
-      color: #111;
-      opacity: 1;
-    }
+.menu{
+margin-top:70px;
+display:flex;
+align-items:flex-start;
+justify-content:flex-start;
+gap:80px;
+}
 
-    .amp {
-      font-family: 'Times New Roman', Georgia, serif;
-      font-size: 86px;
-      line-height: 0.95;
-      font-weight: 200;
-      letter-spacing: -0.04em;
-      color: #111;
-      transform: translateY(8px);
-      user-select: none;
-    }
+/* 메뉴 글자 */
 
-    @media (max-width: 1600px) {
-      .title {
-        font-size: 64px;
-      }
+.menu a{
+text-decoration:none;
+color:#b7b7b7;
+font-size:130px;
+line-height:1.02;
+font-weight:700;
+letter-spacing:-0.05em;
+display:block;
+transition:color .25s ease;
+}
 
-      .menu {
-        gap: 44px;
-        margin-top: 40px;
-      }
+.menu a:hover{
+color:#111;
+}
 
-      .menu a {
-        font-size: 78px;
-      }
+/* & 스타일 */
 
-      .amp {
-        font-size: 72px;
-      }
-    }
+.amp{
+font-family:'Playfair Display', serif;
+font-size:150px;
+font-weight:400;
+letter-spacing:-0.03em;
+transform:translateY(10px);
+}
 
-    @media (max-width: 1200px) {
-      .page {
-        padding: 28px 24px 40px 24px;
-      }
+/* 반응형 */
 
-      .back {
-        font-size: 34px;
-        margin-bottom: 8px;
-      }
+@media (max-width:1600px){
 
-      .title {
-        font-size: 48px;
-      }
+.title{
+font-size:64px;
+}
 
-      .menu {
-        margin-top: 36px;
-        gap: 28px;
-      }
+.menu{
+gap:60px;
+margin-top:60px;
+}
 
-      .menu a {
-        font-size: 64px;
-      }
+.menu a{
+font-size:110px;
+}
 
-      .amp {
-        font-size: 60px;
-        transform: translateY(6px);
-      }
-    }
+.amp{
+font-size:130px;
+}
 
-    @media (max-width: 700px) {
-      .back {
-        font-size: 28px;
-      }
+}
 
-      .title {
-        font-size: 34px;
-      }
+@media (max-width:1200px){
 
-      .menu {
-        margin-top: 28px;
-        gap: 18px;
-      }
+.page{
+padding:28px 24px 40px 24px;
+}
 
-      .menu a {
-        font-size: 36px;
-      }
+.back{
+font-size:34px;
+}
 
-      .amp {
-        font-size: 44px;
-        transform: translateY(4px);
-      }
-    }
-  </style>
+.title{
+font-size:48px;
+}
+
+.menu{
+gap:40px;
+margin-top:40px;
+}
+
+.menu a{
+font-size:80px;
+}
+
+.amp{
+font-size:100px;
+}
+
+}
+
+@media (max-width:700px){
+
+.title{
+font-size:34px;
+}
+
+.back{
+font-size:28px;
+}
+
+.menu{
+gap:20px;
+}
+
+.menu a{
+font-size:46px;
+}
+
+.amp{
+font-size:60px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <main class="page">
-    <a class="back" href="index.html" aria-label="Back to home">←</a>
 
-    <h1 class="title">WORKS</h1>
+<main class="page">
 
-    <section class="menu">
-      <div class="left">
-        <a href="craft-design.html">Craft and<br>Design</a>
-      </div>
+<a class="back" href="index.html">←</a>
 
-      <div class="amp">&amp;</div>
+<h1 class="title">WORKS</h1>
 
-      <div class="right">
-        <a href="two-three-d.html">2D and<br>3D</a>
-      </div>
-    </section>
-  </main>
+<section class="menu">
+
+<div>
+<a href="craft-design.html">
+Craft and<br>
+Design
+</a>
+</div>
+
+<div class="amp">
+&
+</div>
+
+<div>
+<a href="two-three-d.html">
+2D and<br>
+3D
+</a>
+</div>
+
+</section>
+
+</main>
+
 </body>
 </html>
