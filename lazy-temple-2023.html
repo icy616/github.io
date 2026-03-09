@@ -26,7 +26,6 @@
     .page {
       min-height: 100vh;
       padding: 40px 34px 60px 34px;
-      position: relative;
     }
 
     .back {
@@ -50,12 +49,27 @@
       letter-spacing: -0.035em;
     }
 
-    /* 왼쪽 메뉴 */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      column-gap: 56px;
+      align-items: start;
+    }
+
+    /* LEFT */
     .sidebar {
       position: sticky;
       top: 36px;
-      width: 240px;
-      float: left;
+      align-self: start;
+    }
+
+    .sidebar-text {
+      margin: 0 0 34px 0;
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 500;
+      color: #555;
+      letter-spacing: -0.01em;
     }
 
     .category-block {
@@ -63,11 +77,18 @@
     }
 
     .category-title {
+      display: inline-block;
       margin: 0 0 12px 0;
+      text-decoration: none;
       font-size: 22px;
       line-height: 1.1;
       font-weight: 700;
       color: #111;
+      transition: opacity .2s ease;
+    }
+
+    .category-title:hover {
+      opacity: 0.65;
     }
 
     .subcategory-list {
@@ -77,6 +98,7 @@
     }
 
     .subcategory-link {
+      display: block;
       text-decoration: none;
       font-size: 14px;
       line-height: 1.2;
@@ -95,25 +117,17 @@
       font-weight: 600;
     }
 
-    /* 가운데 상세 영역 */
+    /* CENTER */
     .content-area {
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
     }
 
     .detail-wrap {
       width: min(565px, calc(100vw - 80px));
       margin: 0 auto;
-    }
-
-    .description {
-      margin: 0 0 34px 0;
-      font-size: 15px;
-      line-height: 1.35;
-      font-weight: 500;
-      color: #555;
-      letter-spacing: -0.01em;
     }
 
     .image-stack {
@@ -134,13 +148,6 @@
       display: block;
     }
 
-    /* 페이지 레이아웃 정리 */
-    .main-layout::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
     @media (max-width: 1200px) {
       .page {
         padding: 28px 24px 40px 24px;
@@ -155,11 +162,13 @@
         margin-bottom: 34px;
       }
 
+      .main-layout {
+        grid-template-columns: 1fr;
+        row-gap: 36px;
+      }
+
       .sidebar {
         position: static;
-        width: 100%;
-        float: none;
-        margin-bottom: 36px;
       }
 
       .content-area {
@@ -189,7 +198,7 @@
         font-size: 13px;
       }
 
-      .description {
+      .sidebar-text {
         font-size: 14px;
       }
     }
@@ -201,10 +210,15 @@
     <h1 class="title">Craft and Design</h1>
 
     <section class="main-layout">
-      <!-- LEFT MENU -->
+      <!-- LEFT -->
       <aside class="sidebar">
+        <p class="sidebar-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
         <div class="category-block">
-          <h2 class="category-title">Lazy series</h2>
+          <a class="category-title" href="craft-design.html#lazy-series">Lazy series</a>
           <div class="subcategory-list">
             <a class="subcategory-link" href="lazy-temple-2026.html">Lazy Temple (2026)</a>
             <a class="subcategory-link active" href="lazy-temple-2023.html">Lazy Temple (2023)</a>
@@ -214,14 +228,14 @@
         </div>
 
         <div class="category-block">
-          <h2 class="category-title">Composition</h2>
+          <a class="category-title" href="craft-design.html#composition">Composition</a>
           <div class="subcategory-list">
             <a class="subcategory-link" href="composition-2023.html">Composition (2023)</a>
           </div>
         </div>
 
         <div class="category-block">
-          <h2 class="category-title">Object</h2>
+          <a class="category-title" href="craft-design.html#object">Object</a>
           <div class="subcategory-list">
             <a class="subcategory-link" href="bubble-bed-2023.html">Bubble bed (2023)</a>
             <a class="subcategory-link" href="keen-healer-2022.html">Keen healer (2022)</a>
@@ -230,14 +244,14 @@
         </div>
 
         <div class="category-block">
-          <h2 class="category-title">Furniture</h2>
+          <a class="category-title" href="craft-design.html#furniture">Furniture</a>
           <div class="subcategory-list">
             <a class="subcategory-link" href="pivot-joint-2021.html">Pivot Joint (2021)</a>
           </div>
         </div>
 
         <div class="category-block">
-          <h2 class="category-title">Ceramic</h2>
+          <a class="category-title" href="craft-design.html#ceramic">Ceramic</a>
           <div class="subcategory-list">
             <a class="subcategory-link" href="moon-jar-2026.html">Moon Jar (2026)</a>
             <a class="subcategory-link" href="lean-series-2023.html">Lean series (2023)</a>
@@ -248,23 +262,16 @@
         </div>
 
         <div class="category-block">
-          <h2 class="category-title">Metal</h2>
+          <a class="category-title" href="craft-design.html#metal">Metal</a>
           <div class="subcategory-list">
-            <a class="subcategory-link" href="metal-work-1.html">Metal work</a>
+            <a class="subcategory-link" href="metal-work.html">Metal work</a>
           </div>
         </div>
       </aside>
 
-      <!-- CENTER DETAIL -->
+      <!-- CENTER -->
       <section class="content-area">
         <div class="detail-wrap">
-          <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
           <div class="image-stack">
             <div class="image-box">
               <img src="images/craft/lazy-temple-2023-1.jpg" alt="Lazy Temple 2023 image 1">
