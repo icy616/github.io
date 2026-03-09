@@ -1,155 +1,173 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Works - ICYIC</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Works - ICYIC</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #111;
-      font-family: Helvetica, Arial, sans-serif;
-    }
+*{
+box-sizing:border-box;
+}
 
-    .page {
-      min-height: 100vh;
-      padding: 40px 34px 50px 34px;
-    }
+body{
+margin:0;
+background:#ffffff;
+color:#111;
+font-family:Helvetica, Arial, sans-serif;
+}
 
-    .back {
-      display: inline-block;
-      text-decoration: none;
-      color: #111;
-      font-size: 40px;
-      line-height: 1;
-      margin-bottom: 22px;
-    }
+.page{
+min-height:100vh;
+padding:40px 34px 50px 34px;
+}
 
-    .back:hover {
-      opacity: 0.65;
-    }
+.back{
+display:inline-block;
+text-decoration:none;
+color:#111;
+font-size:40px;
+line-height:1;
+margin-bottom:22px;
+}
 
-    .title {
-      margin: 0;
-      font-size: 78px;
-      line-height: 0.95;
-      font-weight: 700;
-      letter-spacing: -0.035em;
-    }
+.back:hover{
+opacity:0.65;
+}
 
-    .works-layout {
-      min-height: calc(100vh - 180px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 80px;
-    }
+.title{
+margin:0;
+font-size:78px;
+line-height:0.95;
+font-weight:700;
+letter-spacing:-0.035em;
+}
 
-    .works-link {
-      text-decoration: none;
-      color: #111;
-      font-size: 122px;
-      line-height: 1.02;
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      text-align: center;
-      display: block;
-    }
+/* 전체 메뉴 영역 */
 
-    .works-link:hover {
-      opacity: 0.6;
-    }
+.menu{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:1200px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
 
-    .amp {
-      font-size: 150px;
-      line-height: 1;
-      font-weight: 300;
-      letter-spacing: -0.06em;
-    }
+/* 왼쪽 */
 
-    @media (max-width: 1600px) {
-      .title {
-        font-size: 64px;
-      }
+.left{
+text-align:left;
+}
 
-      .works-layout {
-        gap: 55px;
-      }
+.right{
+text-align:right;
+}
 
-      .works-link {
-        font-size: 96px;
-      }
+/* 메뉴 글자 */
 
-      .amp {
-        font-size: 120px;
-      }
-    }
+.menu a{
+text-decoration:none;
+color:#111;
+font-size:120px;
+line-height:1.02;
+font-weight:700;
+letter-spacing:-0.05em;
+display:block;
+}
 
-    @media (max-width: 1200px) {
-      .page {
-        padding: 28px 24px 40px 24px;
-      }
+.menu a:hover{
+opacity:0.6;
+}
 
-      .back {
-        font-size: 34px;
-        margin-bottom: 18px;
-      }
+/* & 기호 */
 
-      .title {
-        font-size: 48px;
-      }
+.amp{
+font-size:150px;
+font-weight:200;
+letter-spacing:-0.04em;
+}
 
-      .works-layout {
-        min-height: calc(100vh - 140px);
-        flex-direction: column;
-        gap: 24px;
-      }
+/* 반응형 */
 
-      .works-link {
-        font-size: 64px;
-      }
+@media (max-width:1600px){
 
-      .amp {
-        font-size: 88px;
-      }
-    }
+.title{
+font-size:64px;
+}
 
-    @media (max-width: 700px) {
-      .back {
-        font-size: 28px;
-      }
+.menu{
+width:900px;
+}
 
-      .title {
-        font-size: 34px;
-      }
+.menu a{
+font-size:90px;
+}
 
-      .works-link {
-        font-size: 42px;
-      }
+.amp{
+font-size:120px;
+}
 
-      .amp {
-        font-size: 58px;
-      }
-    }
-  </style>
+}
+
+@media (max-width:1200px){
+
+.menu{
+flex-direction:column;
+gap:20px;
+width:auto;
+}
+
+.left,
+.right{
+text-align:center;
+}
+
+.menu a{
+font-size:64px;
+}
+
+.amp{
+font-size:80px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <main class="page">
-    <a class="back" href="index.html" aria-label="Back to home">←</a>
 
-    <h1 class="title">WORKS</h1>
+<main class="page">
 
-    <section class="works-layout">
-      <a class="works-link" href="craft-design.html">Craft and<br>Design</a>
-      <div class="amp">&amp;</div>
-      <a class="works-link" href="two-three-d.html">2D and<br>3D</a>
-    </section>
-  </main>
+<a class="back" href="index.html">←</a>
+
+<h1 class="title">WORKS</h1>
+
+<div class="menu">
+
+<div class="left">
+<a href="craft-design.html">
+Craft and<br>Design
+</a>
+</div>
+
+<div class="amp">
+&
+</div>
+
+<div class="right">
+<a href="two-three-d.html">
+2D and<br>3D
+</a>
+</div>
+
+</div>
+
+</main>
+
 </body>
 </html>
