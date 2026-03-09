@@ -12,83 +12,144 @@
 
     body {
       margin: 0;
-      background: #fff;
+      background: #ffffff;
       color: #111;
       font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .page {
       min-height: 100vh;
+      padding: 40px 34px 50px 34px;
     }
 
     .back {
-      position: absolute;
-      top: 28px;
-      left: 24px;
-      color: #111;
+      display: inline-block;
       text-decoration: none;
-      font-size: 20px;
+      color: #111;
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 22px;
     }
 
     .back:hover {
-      text-decoration: underline;
+      opacity: 0.65;
     }
 
-    .wrap {
-      min-height: 100vh;
+    .title {
+      margin: 0;
+      font-size: 78px;
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .works-layout {
+      min-height: calc(100vh - 180px);
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 40px 24px;
+      gap: 80px;
     }
 
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .menu a {
-      color: #111;
+    .works-link {
       text-decoration: none;
-      font-size: 72px;
-      line-height: 1.05;
-      font-weight: 400;
-      letter-spacing: 0.01em;
+      color: #111;
+      font-size: 122px;
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      text-align: center;
+      display: block;
     }
 
-    .menu a:hover {
-      text-decoration: underline;
+    .works-link:hover {
+      opacity: 0.6;
     }
 
-    @media (max-width: 900px) {
-      .menu a {
-        font-size: 52px;
+    .amp {
+      font-size: 150px;
+      line-height: 1;
+      font-weight: 300;
+      letter-spacing: -0.06em;
+    }
+
+    @media (max-width: 1600px) {
+      .title {
+        font-size: 64px;
+      }
+
+      .works-layout {
+        gap: 55px;
+      }
+
+      .works-link {
+        font-size: 96px;
+      }
+
+      .amp {
+        font-size: 120px;
       }
     }
 
-    @media (max-width: 600px) {
-      .menu a {
-        font-size: 36px;
+    @media (max-width: 1200px) {
+      .page {
+        padding: 28px 24px 40px 24px;
       }
 
       .back {
-        font-size: 16px;
+        font-size: 34px;
+        margin-bottom: 18px;
+      }
+
+      .title {
+        font-size: 48px;
+      }
+
+      .works-layout {
+        min-height: calc(100vh - 140px);
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .works-link {
+        font-size: 64px;
+      }
+
+      .amp {
+        font-size: 88px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .back {
+        font-size: 28px;
+      }
+
+      .title {
+        font-size: 34px;
+      }
+
+      .works-link {
+        font-size: 42px;
+      }
+
+      .amp {
+        font-size: 58px;
       }
     }
   </style>
 </head>
 <body>
+  <main class="page">
+    <a class="back" href="index.html" aria-label="Back to home">←</a>
 
-  <a class="back" href="index.html">HOME</a>
+    <h1 class="title">WORKS</h1>
 
-  <div class="wrap">
-    <div class="menu">
-      <a href="ceramic.html">Ceramic</a>
-      <a href="metal.html">Metal</a>
-      <a href="glass.html">Glass</a>
-      <a href="2d.html">2D</a>
-      <a href="3d.html">3D</a>
-    </div>
-  </div>
-
+    <section class="works-layout">
+      <a class="works-link" href="craft-design.html">Craft and<br>Design</a>
+      <div class="amp">&amp;</div>
+      <a class="works-link" href="two-three-d.html">2D and<br>3D</a>
+    </section>
+  </main>
 </body>
 </html>
