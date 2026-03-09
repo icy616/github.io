@@ -1,147 +1,194 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About - ICYIC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About - ICYIC</title>
 
-<style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-*{
-box-sizing:border-box;
-}
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111;
+      font-family: Helvetica, Arial, sans-serif;
+    }
 
-body{
-margin:0;
-background:#ffffff;
-color:#111;
-font-family:Helvetica, Arial, sans-serif;
-}
+    .page {
+      min-height: 100vh;
+      padding: 40px 34px;
+    }
 
-.page{
-padding:40px;
-min-height:100vh;
-}
+    .back {
+      text-decoration: none;
+      color: #111;
+      font-size: 40px;
+      line-height: 1;
+    }
 
-.back{
-text-decoration:none;
-font-size:40px;
-color:#111;
-}
+    .back:hover {
+      text-decoration: underline;
+    }
 
-.title{
-margin-top:20px;
-font-size:72px;
-font-weight:700;
-}
+    .title {
+      margin: 20px 0 10px 0;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 0.95;
+    }
 
-.intro{
-margin-top:10px;
-font-size:72px;
-font-weight:700;
-line-height:1.05;
-max-width:1400px;
-}
+    .intro {
+      margin: 0;
+      max-width: 1450px;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
 
-.grid{
-margin-top:180px;
-display:grid;
-grid-template-columns:1fr 1fr;
-grid-template-rows:auto auto;
-column-gap:120px;
-row-gap:80px;
-}
+    .info-grid {
+      margin-top: 170px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 120px;
+      row-gap: 0;
+      align-items: start;
+    }
 
-.section-title{
-font-size:30px;
-font-weight:700;
-margin-bottom:18px;
-}
+    .education {
+      grid-column: 2;
+      grid-row: 1;
+      margin-bottom: 120px;
+    }
 
-.section-body{
-font-size:22px;
-line-height:1.35;
-font-weight:600;
-white-space:pre-line;
-}
+    .experience {
+      grid-column: 1;
+      grid-row: 2;
+    }
 
-.experience{
-grid-column:1;
-grid-row:1;
-}
+    .awards {
+      grid-column: 2;
+      grid-row: 2;
+    }
 
-.education{
-grid-column:2;
-grid-row:1;
-}
+    .section-title {
+      margin: 0 0 18px 0;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
 
-.awards{
-grid-column:2;
-grid-row:2;
-}
+    .section-body {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.34;
+      font-weight: 600;
+      white-space: pre-line;
+      letter-spacing: -0.015em;
+    }
 
-</style>
+    @media (max-width: 1400px) {
+      .title,
+      .intro {
+        font-size: 56px;
+      }
+
+      .info-grid {
+        margin-top: 120px;
+        column-gap: 80px;
+      }
+
+      .education {
+        margin-bottom: 90px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .section-body {
+        font-size: 19px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .page {
+        padding: 28px 22px 40px;
+      }
+
+      .title,
+      .intro {
+        font-size: 42px;
+      }
+
+      .info-grid {
+        margin-top: 80px;
+        grid-template-columns: 1fr;
+        row-gap: 56px;
+      }
+
+      .education,
+      .experience,
+      .awards {
+        grid-column: 1;
+        margin-bottom: 0;
+      }
+
+      .education { grid-row: 1; }
+      .experience { grid-row: 2; }
+      .awards { grid-row: 3; }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .section-body {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="page">
+    <a class="back" href="index.html">←</a>
 
-<div class="page">
-
-<a class="back" href="index.html">←</a>
-
-<h1 class="title">ABOUT</h1>
-
-<p class="intro">
-Somewhere between craft and design.<br>
-And a unexpected book design.
-</p>
-
-
-<div class="grid">
-
-<div class="experience">
-<div class="section-title">Experience</div>
-<div class="section-body">
-Narae Design Editorial designer (2020.11-2022.2)
-LAB VOID (UX/UX study group) UX, UI planning and design exhibition (2021.03-2021.12)
-Medical Device Design Agency 'GO DESIGN' Summer Internship (2023.06-2023.07)
-Groundseesaw Supporters (2023.07-2023.09)
-1986 Production Supporters (2023.07-2023.11)
-KAIST Visual neurodynamics LAB Undergraduate-level researcher (2024.06-2024.08)
-Hanyang univ. Human eXperience LAB Undergraduate-level researcher(2025.03-2025.09)
-</div>
-</div>
-
-
-<div class="education">
-<div class="section-title">Education</div>
-<div class="section-body">
-Hongik University, Seoul, Korea (2018-2025)
+    <section class="info-grid">
+      <div class="education">
+        <h2 class="section-title">Education</h2>
+        <p class="section-body">Hongik University, Seoul, Korea (2018-2025)
 B.F.A. Candidate, School of Design Convergence, College of Design
 Double Major in Ceramics and Glass, College of Fine Arts
 
 Hongik University Graduate School of Fine Arts(2026-)
-M.F.A. in Metal Art and Design
-</div>
-</div>
+M.F.A. in Metal Art and Design</p>
+      </div>
 
+      <div class="experience">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-body">Narae Design Editorial designer (2020.11-2022.2)
+LAB VOID (UX/UX study group) UX, UI planning and design exhibition (2021.03-2021.12)
+Medical Device Design Agency ‘GO DESIGN’ Summer Internship (2023.06-2023.07)
+Groundseesaw Supporters (2023.07-2023.09)
+1986 Production Supporters (2023.07-2023.11)
+KAIST Visual neurodynamics LAB Undergraduate-level researcher (2024.06-2024.08)
+Hanyang univ. Human eXperience LAB Undergraduate-level researcher(2025.03-2025.09)</p>
+      </div>
 
-<div class="awards">
-<div class="section-title">Awards</div>
-<div class="section-body">
-Design Convergence Studio(1) Excellence Award (2021)
+      <div class="awards">
+        <h2 class="section-title">Awards</h2>
+        <p class="section-body">Design Convergence Studio(1) Excellence Award (2021)
 International Busan Design Awards IDEA Awards (2022)
 International Busan Design Awards IDEA Awards (2022)
 Groundseesaw Supporters The Grand Prize (2023)
 International Busan Design Awards IDEA Awards (2023)
 Start-up Item Competition Presidential Award (2023)
-Asian Design Platform Design Contest Winner (2023)
-</div>
-</div>
-
-</div>
-
-</div>
-
+Asian Design Platform Design Contest Winner (2023)</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
