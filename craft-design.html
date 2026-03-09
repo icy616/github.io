@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Craft and Design - ICYIC</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f3f3;
+      color: #111;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 40px 34px 60px 34px;
+    }
+
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: #111;
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .back:hover {
+      opacity: 0.65;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 78px;
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .layout {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      column-gap: 70px;
+      align-items: start;
+    }
+
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 6px;
+    }
+
+    .work-button {
+      appearance: none;
+      background: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      font: inherit;
+      font-size: 20px;
+      line-height: 1.1;
+      font-weight: 600;
+      color: #b7b7b7;
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+
+    .work-button:hover {
+      color: #666;
+    }
+
+    .work-button.active {
+      color: #111;
+    }
+
+    .viewer {
+      min-width: 0;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 0.62fr 1.24fr 1.24fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .image-box {
+      background: #d9d9d9;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .image-box.tall {
+      aspect-ratio: 0.62 / 1.5;
+    }
+
+    .image-box.wide {
+      aspect-ratio: 1 / 1.5;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .description {
+      margin-top: 28px;
+      max-width: 980px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: #111;
+      word-break: keep-all;
+    }
+
+    @media (max-width: 1400px) {
+      .title {
+        font-size: 64px;
+      }
+
+      .layout {
+        grid-template-columns: 170px minmax(0, 1fr);
+        column-gap: 44px;
+      }
+
+      .work-button {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .page {
+        padding: 28px 24px 40px 24px;
+      }
+
+      .back {
+        font-size: 34px;
+        margin-bottom: 18px;
+      }
+
+      .title {
+        font-size: 48px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        row-gap: 34px;
+      }
+
+      .work-list {
+        gap: 10px;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-box.tall,
+      .image-box.wide {
+        aspect-ratio: 4 / 5;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .title {
+        font-size: 34px;
+      }
+
+      .back {
+        font-size: 28px;
+      }
+
+      .work-button {
+        font-size: 17px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="works.html" aria-label="Back to works">←</a>
+
+    <h1 class="title">Craft and Design</h1>
+
+    <section class="layout">
+      <div class="work-list">
+        <button class="work-button active" data-work="lazy-seires">Lazy seires (2026)</button>
+        <button class="work-button" data-work="bubble-bed">Bubble bed (2026)</button>
+        <button class="work-button" data-work="composition">Composition (2023)</button>
+        <button class="work-button" data-work="cubism">Cubism (2026)</button>
+        <button class="work-button" data-work="keen-healer">Keen healer (2026)</button>
+        <button class="work-button" data-work="skin-vase">Skin vase (2026)</button>
+        <button class="work-button" data-work="pivot-joint">Pivot joint (2026)</button>
+        <button class="work-button" data-work="scar-jar">Scar Jar (2026)</button>
+        <button class="work-button" data-work="flower">Flower (2026)</button>
+      </div>
+
+      <div class="viewer">
+        <div class="image-grid">
+          <div class="image-box tall">
+            <img id="img1" src="images/craft/lazy-seires-1.jpg" alt="work image 1">
+          </div>
+
+          <div class="image-box wide">
+            <img id="img2" src="images/craft/lazy-seires-2.jpg" alt="work image 2">
+          </div>
+
+          <div class="image-box wide">
+            <img id="img3" src="images/craft/lazy-seires-3.jpg" alt="work image 3">
+          </div>
+        </div>
+
+        <div class="description" id="description">
+          Lazy seires explores an in-between state of objecthood, softness, and domestic humor through craft-based form and design logic.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const works = {
+      "lazy-seires": {
+        images: [
+          "images/craft/lazy-seires-1.jpg",
+          "images/craft/lazy-seires-2.jpg",
+          "images/craft/lazy-seires-3.jpg"
+        ],
+        description:
+          "Lazy seires explores an in-between state of objecthood, softness, and domestic humor through craft-based form and design logic."
+      },
+      "bubble-bed": {
+        images: [
+          "images/craft/bubble-bed-1.jpg",
+          "images/craft/bubble-bed-2.jpg",
+          "images/craft/bubble-bed-3.jpg"
+        ],
+        description:
+          "Bubble bed investigates softness, body memory, and inflated volume through a furniture-like sculptural language."
+      },
+      "composition": {
+        images: [
+          "images/craft/composition-1.jpg",
+          "images/craft/composition-2.jpg",
+          "images/craft/composition-3.jpg"
+        ],
+        description:
+          "Composition focuses on the relationship between modular form, balance, and spatial tension."
+      },
+      "cubism": {
+        images: [
+          "images/craft/cubism-1.jpg",
+          "images/craft/cubism-2.jpg",
+          "images/craft/cubism-3.jpg"
+        ],
+        description:
+          "Cubism reinterprets fragmented volume and planar construction into a tactile object-based study."
+      },
+      "keen-healer": {
+        images: [
+          "images/craft/keen-healer-1.jpg",
+          "images/craft/keen-healer-2.jpg",
+          "images/craft/keen-healer-3.jpg"
+        ],
+        description:
+          "Keen healer considers repair, scar, and vulnerability through a crafted object vocabulary."
+      },
+      "skin-vase": {
+        images: [
+          "images/craft/skin-vase-1.jpg",
+          "images/craft/skin-vase-2.jpg",
+          "images/craft/skin-vase-3.jpg"
+        ],
+        description:
+          "Skin vase explores surface as membrane, container, and emotional interface."
+      },
+      "pivot-joint": {
+        images: [
+          "images/craft/pivot-joint-1.jpg",
+          "images/craft/pivot-joint-2.jpg",
+          "images/craft/pivot-joint-3.jpg"
+        ],
+        description:
+          "Pivot joint investigates movement, connection, and mechanical softness within crafted form."
+      },
+      "scar-jar": {
+        images: [
+          "images/craft/scar-jar-1.jpg",
+          "images/craft/scar-jar-2.jpg",
+          "images/craft/scar-jar-3.jpg"
+        ],
+        description:
+          "Scar Jar traces marks, healing, and rupture through a vessel format."
+      },
+      "flower": {
+        images: [
+          "images/craft/flower-1.jpg",
+          "images/craft/flower-2.jpg",
+          "images/craft/flower-3.jpg"
+        ],
+        description:
+          "Flower translates decorative and organic references into a crafted sculptural composition."
+      }
+    };
+
+    const buttons = document.querySelectorAll(".work-button");
+    const img1 = document.getElementById("img1");
+    const img2 = document.getElementById("img2");
+    const img3 = document.getElementById("img3");
+    const description = document.getElementById("description");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.work;
+        const work = works[key];
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        img1.src = work.images[0];
+        img2.src = work.images[1];
+        img3.src = work.images[2];
+        description.textContent = work.description;
+      });
+    });
+  </script>
+</body>
+</html>
