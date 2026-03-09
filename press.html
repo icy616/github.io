@@ -1,47 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Press - ICYIC</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #fff;
-      color: #111;
-      font-family: Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-    }
-    .wrap {
-      padding: 28px 24px;
-    }
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      color: #111;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    .back:hover {
-      text-decoration: underline;
-    }
-    h1 {
-      font-size: 60px;
-      margin: 0 0 30px;
-      font-weight: 600;
-    }
-    p {
-      font-size: 24px;
-      line-height: 1.4;
-      margin: 0 0 16px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press - ICYIC</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#ffffff;
+color:#111;
+font-family:Helvetica, Arial, sans-serif;
+}
+
+.page{
+min-height:100vh;
+padding:40px 34px 50px 34px;
+}
+
+.back{
+display:inline-block;
+text-decoration:none;
+color:#111;
+font-size:40px;
+line-height:1;
+margin-bottom:22px;
+}
+
+.back:hover{
+opacity:0.65;
+}
+
+.title{
+margin:0;
+font-size:78px;
+line-height:0.95;
+font-weight:700;
+letter-spacing:-0.035em;
+}
+
+@media (max-width:1600px){
+
+.title{
+font-size:64px;
+}
+
+}
+
+@media (max-width:1200px){
+
+.page{
+padding:28px 24px 40px 24px;
+}
+
+.back{
+font-size:34px;
+margin-bottom:18px;
+}
+
+.title{
+font-size:48px;
+}
+
+}
+
+@media (max-width:700px){
+
+.back{
+font-size:28px;
+}
+
+.title{
+font-size:34px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <a class="back" href="index.html">HOME</a>
-    <h1>PRESS</h1>
-  </div>
+
+<main class="page">
+
+<a class="back" href="index.html">←</a>
+
+<h1 class="title">PRESS</h1>
+
+</main>
+
 </body>
 </html>
