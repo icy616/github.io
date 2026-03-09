@@ -25,7 +25,7 @@
 
     .page {
       min-height: 100vh;
-      padding: 40px 34px 60px 34px;
+      padding: 40px 34px 50px 34px;
     }
 
     .back {
@@ -34,32 +34,23 @@
       color: #111;
       font-size: 40px;
       line-height: 1;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     .back:hover {
       opacity: 0.65;
     }
 
-    .title-link {
-      text-decoration: none;
-      color: #111;
-      display: inline-block;
-    }
-
     .title {
-      margin: 0 0 52px 0;
+      margin: 0;
       font-size: 78px;
       line-height: 0.95;
       font-weight: 700;
       letter-spacing: -0.035em;
     }
 
-    .title-link:hover {
-      opacity: 0.8;
-    }
-
     .layout {
+      margin-top: 48px;
       display: grid;
       grid-template-columns: 260px minmax(0, 1fr);
       column-gap: 56px;
@@ -174,14 +165,15 @@
 
       .back {
         font-size: 34px;
+        margin-bottom: 8px;
       }
 
       .title {
         font-size: 48px;
-        margin-bottom: 36px;
       }
 
       .layout {
+        margin-top: 36px;
         grid-template-columns: 1fr;
         row-gap: 34px;
       }
@@ -200,12 +192,12 @@
     }
 
     @media (max-width: 700px) {
-      .title {
-        font-size: 34px;
-      }
-
       .back {
         font-size: 28px;
+      }
+
+      .title {
+        font-size: 34px;
       }
 
       .subcategory-item {
@@ -218,18 +210,12 @@
   <main class="page">
     <a class="back" href="works.html" aria-label="Back to works">←</a>
 
-    <a class="title-link" href="craft-design.html">
-      <h1 class="title">Craft and Design</h1>
-    </a>
+    <h1 class="title">Craft and Design</h1>
 
     <section class="layout">
       <aside class="sidebar">
-        <div class="category-block">
-          <button class="category-button active" data-category="all">All</button>
-        </div>
-
-        <div class="category-block">
-          <button class="category-button" data-category="lazy-series">Lazy series</button>
+        <div class="category-block" id="lazy-series">
+          <button class="category-button active" data-category="lazy-series">Lazy series</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="lazy-temple-2026.html">Lazy Temple (2026)</a>
             <a class="subcategory-item" href="lazy-temple-2023.html">Lazy Temple (2023)</a>
@@ -238,14 +224,14 @@
           </div>
         </div>
 
-        <div class="category-block">
+        <div class="category-block" id="composition">
           <button class="category-button" data-category="composition">Composition</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="composition-2023.html">Composition (2023)</a>
           </div>
         </div>
 
-        <div class="category-block">
+        <div class="category-block" id="object">
           <button class="category-button" data-category="object">Object</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="bubble-bed-2023.html">Bubble bed (2023)</a>
@@ -254,14 +240,14 @@
           </div>
         </div>
 
-        <div class="category-block">
+        <div class="category-block" id="furniture">
           <button class="category-button" data-category="furniture">Furniture</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="pivot-joint-2021.html">Pivot Joint (2021)</a>
           </div>
         </div>
 
-        <div class="category-block">
+        <div class="category-block" id="ceramic">
           <button class="category-button" data-category="ceramic">Ceramic</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="moon-jar-2026.html">Moon Jar (2026)</a>
@@ -272,7 +258,7 @@
           </div>
         </div>
 
-        <div class="category-block">
+        <div class="category-block" id="metal">
           <button class="category-button" data-category="metal">Metal</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="metal-work.html">Metal work</a>
@@ -288,95 +274,33 @@
 
   <script>
     const works = [
-      {
-        category: "lazy-series",
-        image: "images/craft/lazy-series-1.jpg",
-        link: "lazy-temple-2026.html"
-      },
-      {
-        category: "lazy-series",
-        image: "images/craft/lazy-series-2.jpg",
-        link: "lazy-temple-2023.html"
-      },
-      {
-        category: "lazy-series",
-        image: "images/craft/lazy-series-3.jpg",
-        link: "lazy-jar-2023.html"
-      },
-      {
-        category: "lazy-series",
-        image: "images/craft/lazy-series-4.jpg",
-        link: "lazy-lamp-2023.html"
-      },
+      { category: "lazy-series", image: "images/craft/lazy-series-1.jpg", link: "lazy-temple-2026.html" },
+      { category: "lazy-series", image: "images/craft/lazy-series-2.jpg", link: "lazy-temple-2023.html" },
+      { category: "lazy-series", image: "images/craft/lazy-series-3.jpg", link: "lazy-jar-2023.html" },
+      { category: "lazy-series", image: "images/craft/lazy-series-4.jpg", link: "lazy-lamp-2023.html" },
 
-      {
-        category: "composition",
-        image: "images/craft/composition-1.jpg",
-        link: "composition-2023.html"
-      },
+      { category: "composition", image: "images/craft/composition-1.jpg", link: "composition-2023.html" },
 
-      {
-        category: "object",
-        image: "images/craft/object-1.jpg",
-        link: "bubble-bed-2023.html"
-      },
-      {
-        category: "object",
-        image: "images/craft/object-2.jpg",
-        link: "keen-healer-2022.html"
-      },
-      {
-        category: "object",
-        image: "images/craft/object-3.jpg",
-        link: "flower-in-caustics-2022.html"
-      },
+      { category: "object", image: "images/craft/object-1.jpg", link: "bubble-bed-2023.html" },
+      { category: "object", image: "images/craft/object-2.jpg", link: "keen-healer-2022.html" },
+      { category: "object", image: "images/craft/object-3.jpg", link: "flower-in-caustics-2022.html" },
 
-      {
-        category: "furniture",
-        image: "images/craft/furniture-1.jpg",
-        link: "pivot-joint-2021.html"
-      },
+      { category: "furniture", image: "images/craft/furniture-1.jpg", link: "pivot-joint-2021.html" },
 
-      {
-        category: "ceramic",
-        image: "images/craft/ceramic-1.jpg",
-        link: "moon-jar-2026.html"
-      },
-      {
-        category: "ceramic",
-        image: "images/craft/ceramic-2.jpg",
-        link: "lean-series-2023.html"
-      },
-      {
-        category: "ceramic",
-        image: "images/craft/ceramic-3.jpg",
-        link: "cubism-2022.html"
-      },
-      {
-        category: "ceramic",
-        image: "images/craft/ceramic-4.jpg",
-        link: "scar-jar-2021.html"
-      },
-      {
-        category: "ceramic",
-        image: "images/craft/ceramic-5.jpg",
-        link: "skin-vase-2021.html"
-      },
+      { category: "ceramic", image: "images/craft/ceramic-1.jpg", link: "moon-jar-2026.html" },
+      { category: "ceramic", image: "images/craft/ceramic-2.jpg", link: "lean-series-2023.html" },
+      { category: "ceramic", image: "images/craft/ceramic-3.jpg", link: "cubism-2022.html" },
+      { category: "ceramic", image: "images/craft/ceramic-4.jpg", link: "scar-jar-2021.html" },
+      { category: "ceramic", image: "images/craft/ceramic-5.jpg", link: "skin-vase-2021.html" },
 
-      {
-        category: "metal",
-        image: "images/craft/metal-1.jpg",
-        link: "metal-work.html"
-      }
+      { category: "metal", image: "images/craft/metal-1.jpg", link: "metal-work.html" }
     ];
 
     const grid = document.getElementById("grid");
     const buttons = document.querySelectorAll(".category-button");
 
     function renderWorks(category) {
-      const filtered = category === "all"
-        ? works
-        : works.filter(work => work.category === category);
+      const filtered = works.filter(work => work.category === category);
 
       grid.innerHTML = filtered.map(work => `
         <a class="work-card" href="${work.link}">
@@ -393,7 +317,7 @@
       });
     });
 
-    renderWorks("all");
+    renderWorks("lazy-series");
   </script>
 </body>
 </html>
