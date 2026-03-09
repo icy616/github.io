@@ -1,101 +1,159 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - ICYIC</title>
 
-<title>Contact - ICYIC</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111;
+      font-family: Helvetica, Arial, sans-serif;
+    }
 
-*{
-box-sizing:border-box;
-}
+    .page {
+      min-height: 100vh;
+      padding: 40px 34px 50px 34px;
+      position: relative;
+    }
 
-body{
-margin:0;
-background:#fff;
-color:#111;
-font-family:Helvetica,Arial,sans-serif;
-min-height:100vh;
-}
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: #111;
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
 
-.wrap{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-text-align:center;
-}
+    .back:hover {
+      opacity: 0.65;
+    }
 
-.back{
-position:absolute;
-top:28px;
-left:24px;
-color:#111;
-text-decoration:none;
-font-size:20px;
-}
+    .title {
+      margin: 0;
+      font-size: 78px;
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
 
-.back:hover{
-text-decoration:underline;
-}
+    .contact-info {
+      position: absolute;
+      right: 120px;
+      bottom: 90px;
+      text-align: left;
+    }
 
-h1{
-font-size:60px;
-margin-bottom:40px;
-font-weight:600;
-}
+    .contact-label {
+      margin: 0 0 18px 0;
+      font-size: 32px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
 
-/* 프로필 사진 */
+    .contact-mail {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: #111;
+      text-decoration: none;
+    }
 
-.profile{
-width:350px;
-height:auto;
-margin-bottom:30px;
-}
+    .contact-mail:hover {
+      text-decoration: underline;
+    }
 
-/* 텍스트 */
+    @media (max-width: 1600px) {
+      .title {
+        font-size: 64px;
+      }
 
-p{
-font-size:16px;
-line-height:1.2;
-color:#777;
-margin:8px 0;
-}
+      .contact-info {
+        right: 90px;
+        bottom: 70px;
+      }
 
-p a{
-color:#777;
-text-decoration:none;
-}
+      .contact-label {
+        font-size: 28px;
+      }
 
-p a:hover{
-text-decoration:underline;
-}
+      .contact-mail {
+        font-size: 20px;
+      }
+    }
 
-</style>
+    @media (max-width: 1200px) {
+      .page {
+        padding: 28px 24px 40px 24px;
+      }
+
+      .back {
+        font-size: 34px;
+        margin-bottom: 18px;
+      }
+
+      .title {
+        font-size: 48px;
+      }
+
+      .contact-info {
+        position: static;
+        margin-top: 280px;
+        text-align: left;
+      }
+
+      .contact-label {
+        font-size: 24px;
+      }
+
+      .contact-mail {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .title {
+        font-size: 34px;
+      }
+
+      .back {
+        font-size: 28px;
+      }
+
+      .contact-info {
+        margin-top: 180px;
+      }
+
+      .contact-label {
+        font-size: 22px;
+      }
+
+      .contact-mail {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="page">
+    <a class="back" href="index.html" aria-label="Back to home">←</a>
 
-<a class="back" href="index.html">HOME</a>
+    <h1 class="title">CONTACT</h1>
 
-<div class="wrap">
-
-<h1>CONTACT</h1>
-
-<img class="profile" src="images/profile.jpg" alt="profile">
-
-<p>Email: asdf616asdf@naver.com</p>
-
-<p>
-<a href="https://www.instagram.com/h0t_vegetable/" target="_blank" rel="noopener noreferrer">
-Instagram
-</a>
-</p>
-
-</div>
-
+    <div class="contact-info">
+      <h2 class="contact-label">e-mail</h2>
+      <a class="contact-mail" href="mailto:asdf616asdf@naver.com">asdf616asdf@naver.com</a>
+    </div>
+  </main>
 </body>
 </html>
