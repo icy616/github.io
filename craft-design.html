@@ -41,12 +41,22 @@
       opacity: 0.65;
     }
 
+    .title-link {
+      text-decoration: none;
+      color: #111;
+      display: inline-block;
+    }
+
     .title {
       margin: 0 0 52px 0;
       font-size: 78px;
       line-height: 0.95;
       font-weight: 700;
       letter-spacing: -0.035em;
+    }
+
+    .title-link:hover {
+      opacity: 0.8;
     }
 
     .layout {
@@ -104,7 +114,7 @@
       font-weight: 500;
       color: #b7b7b7;
       letter-spacing: -0.01em;
-      transition: color .2s ease, opacity .2s ease;
+      transition: color .2s ease;
     }
 
     .subcategory-item:hover {
@@ -208,12 +218,18 @@
   <main class="page">
     <a class="back" href="works.html" aria-label="Back to works">←</a>
 
-    <h1 class="title">Craft and Design</h1>
+    <a class="title-link" href="craft-design.html">
+      <h1 class="title">Craft and Design</h1>
+    </a>
 
     <section class="layout">
       <aside class="sidebar">
         <div class="category-block">
-          <button class="category-button active" data-category="lazy-series">Lazy series</button>
+          <button class="category-button active" data-category="all">All</button>
+        </div>
+
+        <div class="category-block">
+          <button class="category-button" data-category="lazy-series">Lazy series</button>
           <div class="subcategory-list">
             <a class="subcategory-item" href="lazy-temple-2026.html">Lazy Temple (2026)</a>
             <a class="subcategory-item" href="lazy-temple-2023.html">Lazy Temple (2023)</a>
@@ -259,104 +275,125 @@
         <div class="category-block">
           <button class="category-button" data-category="metal">Metal</button>
           <div class="subcategory-list">
-            <a class="subcategory-item" href="metal-work-1.html">Metal work</a>
+            <a class="subcategory-item" href="metal-work.html">Metal work</a>
           </div>
         </div>
       </aside>
 
       <section class="viewer">
-        <div class="grid">
-          <a class="work-card" id="card1" href="lazy-temple-2026.html">
-            <div class="work-thumb" id="thumb1"></div>
-          </a>
-
-          <a class="work-card" id="card2" href="lazy-temple-2023.html">
-            <div class="work-thumb" id="thumb2"></div>
-          </a>
-
-          <a class="work-card" id="card3" href="lazy-jar-2023.html">
-            <div class="work-thumb" id="thumb3"></div>
-          </a>
-
-          <a class="work-card" id="card4" href="lazy-lamp-2023.html">
-            <div class="work-thumb" id="thumb4"></div>
-          </a>
-
-          <a class="work-card" id="card5" href="#">
-            <div class="work-thumb" id="thumb5"></div>
-          </a>
-
-          <a class="work-card" id="card6" href="#">
-            <div class="work-thumb" id="thumb6"></div>
-          </a>
-        </div>
+        <div class="grid" id="grid"></div>
       </section>
     </section>
   </main>
 
   <script>
-    const categories = {
-      "lazy-series": [
-        { image: "images/craft/lazy-series-1.jpg", link: "lazy-temple-2026.html" },
-        { image: "images/craft/lazy-series-2.jpg", link: "lazy-temple-2023.html" },
-        { image: "images/craft/lazy-series-3.jpg", link: "lazy-jar-2023.html" },
-        { image: "images/craft/lazy-series-4.jpg", link: "lazy-lamp-2023.html" }
-      ],
-      "composition": [
-        { image: "images/craft/composition-1.jpg", link: "composition-2023.html" },
-        { image: "images/craft/composition-2.jpg", link: "composition-2023.html" },
-        { image: "images/craft/composition-3.jpg", link: "composition-2023.html" }
-      ],
-      "object": [
-        { image: "images/craft/object-1.jpg", link: "bubble-bed-2023.html" },
-        { image: "images/craft/object-2.jpg", link: "keen-healer-2022.html" },
-        { image: "images/craft/object-3.jpg", link: "flower-in-caustics-2022.html" }
-      ],
-      "furniture": [
-        { image: "images/craft/furniture-1.jpg", link: "pivot-joint-2021.html" }
-      ],
-      "ceramic": [
-        { image: "images/craft/ceramic-1.jpg", link: "moon-jar-2026.html" },
-        { image: "images/craft/ceramic-2.jpg", link: "lean-series-2023.html" },
-        { image: "images/craft/ceramic-3.jpg", link: "cubism-2022.html" },
-        { image: "images/craft/ceramic-4.jpg", link: "scar-jar-2021.html" },
-        { image: "images/craft/ceramic-5.jpg", link: "skin-vase-2021.html" }
-      ],
-      "metal": [
-        { image: "images/craft/metal-1.jpg", link: "metal-work-1.html" }
-      ]
-    };
+    const works = [
+      {
+        category: "lazy-series",
+        image: "images/craft/lazy-series-1.jpg",
+        link: "lazy-temple-2026.html"
+      },
+      {
+        category: "lazy-series",
+        image: "images/craft/lazy-series-2.jpg",
+        link: "lazy-temple-2023.html"
+      },
+      {
+        category: "lazy-series",
+        image: "images/craft/lazy-series-3.jpg",
+        link: "lazy-jar-2023.html"
+      },
+      {
+        category: "lazy-series",
+        image: "images/craft/lazy-series-4.jpg",
+        link: "lazy-lamp-2023.html"
+      },
 
+      {
+        category: "composition",
+        image: "images/craft/composition-1.jpg",
+        link: "composition-2023.html"
+      },
+
+      {
+        category: "object",
+        image: "images/craft/object-1.jpg",
+        link: "bubble-bed-2023.html"
+      },
+      {
+        category: "object",
+        image: "images/craft/object-2.jpg",
+        link: "keen-healer-2022.html"
+      },
+      {
+        category: "object",
+        image: "images/craft/object-3.jpg",
+        link: "flower-in-caustics-2022.html"
+      },
+
+      {
+        category: "furniture",
+        image: "images/craft/furniture-1.jpg",
+        link: "pivot-joint-2021.html"
+      },
+
+      {
+        category: "ceramic",
+        image: "images/craft/ceramic-1.jpg",
+        link: "moon-jar-2026.html"
+      },
+      {
+        category: "ceramic",
+        image: "images/craft/ceramic-2.jpg",
+        link: "lean-series-2023.html"
+      },
+      {
+        category: "ceramic",
+        image: "images/craft/ceramic-3.jpg",
+        link: "cubism-2022.html"
+      },
+      {
+        category: "ceramic",
+        image: "images/craft/ceramic-4.jpg",
+        link: "scar-jar-2021.html"
+      },
+      {
+        category: "ceramic",
+        image: "images/craft/ceramic-5.jpg",
+        link: "skin-vase-2021.html"
+      },
+
+      {
+        category: "metal",
+        image: "images/craft/metal-1.jpg",
+        link: "metal-work.html"
+      }
+    ];
+
+    const grid = document.getElementById("grid");
     const buttons = document.querySelectorAll(".category-button");
 
-    function renderCategory(key) {
-      const items = categories[key];
+    function renderWorks(category) {
+      const filtered = category === "all"
+        ? works
+        : works.filter(work => work.category === category);
 
-      for (let i = 0; i < 6; i++) {
-        const card = document.getElementById(`card${i + 1}`);
-        const thumb = document.getElementById(`thumb${i + 1}`);
-
-        if (items && items[i]) {
-          thumb.style.backgroundImage = `url('${items[i].image}')`;
-          card.href = items[i].link || "#";
-          card.style.display = "block";
-        } else {
-          thumb.style.backgroundImage = "none";
-          card.href = "#";
-          card.style.display = "none";
-        }
-      }
+      grid.innerHTML = filtered.map(work => `
+        <a class="work-card" href="${work.link}">
+          <div class="work-thumb" style="background-image:url('${work.image}')"></div>
+        </a>
+      `).join("");
     }
 
-    buttons.forEach((button) => {
+    buttons.forEach(button => {
       button.addEventListener("click", () => {
-        buttons.forEach((btn) => btn.classList.remove("active"));
+        buttons.forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
-        renderCategory(button.dataset.category);
+        renderWorks(button.dataset.category);
       });
     });
 
-    renderCategory("lazy-series");
+    renderWorks("all");
   </script>
 </body>
 </html>
