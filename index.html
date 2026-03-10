@@ -1,56 +1,135 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ICYIC</title>
 
-<link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-<title>ICYIC</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      background: #fff;
+      padding: 0;
+      background: #ffffff;
       color: #111;
       font-family: Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      position: relative;
       min-height: 100vh;
+      padding: 0 24px 24px 24px;
     }
-    .wrap {
-      padding: 28px 24px;
+
+    /* 좌상단 심볼 */
+    .hero-mark {
+      position: absolute;
+      top: -14px;
+      left: -18px;
+      width: 190px;
+      height: auto;
+      display: block;
+      z-index: 1;
+      pointer-events: none;
     }
-    .site-title {
-      font-size: 140px;
-      margin-bottom: 40px;
-      font-weight: 600;
-    }
-    nav {
+
+    /* 메뉴 전체를 아래로 내림 */
+    .menu {
+      position: relative;
+      z-index: 2;
+      padding-top: 330px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      max-width: 320px;
+      align-items: flex-start;
+      gap: 6px;
     }
-    nav a {
-      color: #111;
+
+    .menu a {
+      display: block;
       text-decoration: none;
-      font-size: 100px;
-      line-height: 1.0;
+      color: #111;
+      font-size: 102px;
+      line-height: 0.88;
+      font-weight: 300;
+      letter-spacing: -0.045em;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .menu a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 1400px) {
+      .hero-mark {
+        width: 160px;
+        top: -12px;
+        left: -16px;
+      }
+
+      .menu {
+        padding-top: 285px;
+      }
+
+      .menu a {
+        font-size: 86px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .page {
+        padding: 0 18px 18px 18px;
+      }
+
+      .hero-mark {
+        width: 130px;
+        top: -10px;
+        left: -14px;
+      }
+
+      .menu {
+        padding-top: 235px;
+        gap: 8px;
+      }
+
+      .menu a {
+        font-size: 64px;
+        line-height: 0.92;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-mark {
+        width: 110px;
+        top: -8px;
+        left: -12px;
+      }
+
+      .menu {
+        padding-top: 190px;
+      }
+
+      .menu a {
+        font-size: 46px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="site-title">ICYIC</div>
-    <nav>
+  <main class="page">
+    <img class="hero-mark" src="images/favicon.png" alt="ICYIC symbol">
+
+    <nav class="menu" aria-label="Main navigation">
       <a href="about.html">ABOUT</a>
       <a href="works.html">WORKS</a>
       <a href="press.html">PRESS</a>
       <a href="contact.html">CONTACT</a>
-      <a href="https://www.instagram.com/icyiconic/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+      <a href="https://www.instagram.com/h0t_vegetable/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
     </nav>
-  </div>
+  </main>
 </body>
 </html>
