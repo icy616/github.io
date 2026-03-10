@@ -1,135 +1,151 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ICYIC</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<title>ICYIC</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<link rel="icon" type="image/png" href="images/favicon.png">
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #111;
-      font-family: Helvetica, Arial, sans-serif;
-      overflow-x: hidden;
-    }
+<style>
 
-    .page {
-      position: relative;
-      min-height: 100vh;
-      padding: 0 24px 24px 24px;
-    }
+*{
+box-sizing:border-box;
+}
 
-    /* 좌상단 심볼 */
-    .hero-mark {
-      position: absolute;
-      top: -14px;
-      left: -18px;
-      width: 190px;
-      height: auto;
-      display: block;
-      z-index: 1;
-      pointer-events: none;
-    }
+html,body{
+margin:0;
+padding:0;
+background:#ffffff;
+color:#111;
+font-family:Helvetica, Arial, sans-serif;
+overflow-x:hidden;
+}
 
-    /* 메뉴 전체를 아래로 내림 */
-    .menu {
-      position: relative;
-      z-index: 2;
-      padding-top: 330px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
-    }
+/* 전체 페이지 */
 
-    .menu a {
-      display: block;
-      text-decoration: none;
-      color: #111;
-      font-size: 102px;
-      line-height: 0.88;
-      font-weight: 300;
-      letter-spacing: -0.045em;
-    }
+.page{
+position:relative;
+min-height:100vh;
+padding:0 24px;
+}
 
-    .menu a:hover {
-      opacity: 0.6;
-    }
+/* 로고 */
 
-    @media (max-width: 1400px) {
-      .hero-mark {
-        width: 160px;
-        top: -12px;
-        left: -16px;
-      }
+.hero-mark{
+position:absolute;
+top:-120px;
+left:-120px;
+width:520px;
+height:auto;
+z-index:1;
+pointer-events:none;
+}
 
-      .menu {
-        padding-top: 285px;
-      }
+/* 메뉴 */
 
-      .menu a {
-        font-size: 86px;
-      }
-    }
+.menu{
+position:relative;
+z-index:2;
 
-    @media (max-width: 1000px) {
-      .page {
-        padding: 0 18px 18px 18px;
-      }
+padding-top:520px;
 
-      .hero-mark {
-        width: 130px;
-        top: -10px;
-        left: -14px;
-      }
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+gap:8px;
+}
 
-      .menu {
-        padding-top: 235px;
-        gap: 8px;
-      }
+.menu a{
+text-decoration:none;
+color:#111;
 
-      .menu a {
-        font-size: 64px;
-        line-height: 0.92;
-      }
-    }
+font-size:110px;
+line-height:0.9;
+font-weight:300;
 
-    @media (max-width: 700px) {
-      .hero-mark {
-        width: 110px;
-        top: -8px;
-        left: -12px;
-      }
+letter-spacing:-0.05em;
+}
 
-      .menu {
-        padding-top: 190px;
-      }
+.menu a:hover{
+opacity:.6;
+}
 
-      .menu a {
-        font-size: 46px;
-      }
-    }
-  </style>
+/* 반응형 */
+
+@media (max-width:1400px){
+
+.hero-mark{
+width:420px;
+top:-100px;
+left:-100px;
+}
+
+.menu{
+padding-top:440px;
+}
+
+.menu a{
+font-size:90px;
+}
+
+}
+
+@media (max-width:900px){
+
+.hero-mark{
+width:320px;
+top:-70px;
+left:-70px;
+}
+
+.menu{
+padding-top:320px;
+}
+
+.menu a{
+font-size:60px;
+}
+
+}
+
+@media (max-width:600px){
+
+.hero-mark{
+width:260px;
+top:-50px;
+left:-50px;
+}
+
+.menu{
+padding-top:260px;
+}
+
+.menu a{
+font-size:46px;
+}
+
+}
+
+</style>
 </head>
-<body>
-  <main class="page">
-    <img class="hero-mark" src="images/favicon.png" alt="ICYIC symbol">
 
-    <nav class="menu" aria-label="Main navigation">
-      <a href="about.html">ABOUT</a>
-      <a href="works.html">WORKS</a>
-      <a href="press.html">PRESS</a>
-      <a href="contact.html">CONTACT</a>
-      <a href="https://www.instagram.com/h0t_vegetable/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-    </nav>
-  </main>
+<body>
+
+<main class="page">
+
+<img class="hero-mark" src="images/favicon.png">
+
+<nav class="menu">
+<a href="about.html">ABOUT</a>
+<a href="works.html">WORKS</a>
+<a href="press.html">PRESS</a>
+<a href="contact.html">CONTACT</a>
+<a href="https://instagram.com" target="_blank">INSTAGRAM</a>
+</nav>
+
+</main>
+
 </body>
 </html>
